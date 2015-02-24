@@ -1,4 +1,6 @@
-package com.example.applicationoms;
+package fr.oms.activities;
+
+import com.example.applicationoms.R;
 
 import android.app.Activity;
 import android.os.Bundle;
