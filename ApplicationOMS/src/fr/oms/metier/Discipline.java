@@ -1,5 +1,6 @@
 package fr.oms.metier;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Discipline {
@@ -8,9 +9,10 @@ public class Discipline {
 	private String nom;
 	private List<Sport> listeSport;
 	
-	public Discipline(int unId, String unNom){
+	public Discipline(int unId, String unNom, List<Sport> uneListeSport){
 		uid = unId;
 		nom = unNom;
+		listeSport = uneListeSport;
 	}
 
 	public int getUid() {
