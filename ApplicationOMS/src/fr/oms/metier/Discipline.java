@@ -1,6 +1,5 @@
 package fr.oms.metier;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Discipline {
