@@ -2,20 +2,20 @@ package fr.oms.metier;
 
 public class Sport {
 
-	private int id;
+	private int uid;
 	private String nom;
 	
 	public Sport(int unId, String unNom){
-		id = unId;
+		uid = unId;
 		nom = unNom;
 	}
 
 	public int getId() {
-		return id;
+		return uid;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.uid = id;
 	}
 
 	public String getNom() {
