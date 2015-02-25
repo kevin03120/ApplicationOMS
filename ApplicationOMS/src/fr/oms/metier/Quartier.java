@@ -1,7 +1,5 @@
 package fr.oms.metier;
 
-import fr.oms.modele.Manager;
-
 public class Quartier {
 
 	private int uid;

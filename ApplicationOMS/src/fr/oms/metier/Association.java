@@ -1,7 +1,6 @@
 package fr.oms.metier;
 
 import java.util.List;
-import fr.oms.modele.*;
 
 public class Association {
 
