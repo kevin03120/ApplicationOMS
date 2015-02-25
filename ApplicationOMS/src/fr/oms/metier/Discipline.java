@@ -2,6 +2,8 @@ package fr.oms.metier;
 
 import java.util.List;
 
+import fr.oms.modele.Manager;
+
 public class Discipline {
 
 	private int uid;

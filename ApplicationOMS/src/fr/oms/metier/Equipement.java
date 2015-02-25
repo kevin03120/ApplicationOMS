@@ -1,5 +1,7 @@
 package fr.oms.metier;
 
+import fr.oms.modele.Manager;
+
 public class Equipement {
 
 	private int uid;
