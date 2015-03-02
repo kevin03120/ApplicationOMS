@@ -5,5 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="info_image">Logo de l\'OMS</string>
+    <string name="association">Les associations</string>
+    <string name="equipement">Les equipements</string>
+    <string name="quartier">Les quartiers</string>
+    <string name="discipline">Les disciplines</string>
+    <string name="info_icone">Information sur l\'OMS</string>
 
 </resources>

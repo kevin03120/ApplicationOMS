@@ -23,6 +23,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+		
 		sk = (SeekBar)findViewById(R.id.pgrBarDemarrage);
 		timer = new Timer();
 		timer.scheduleAtFixedRate(new DemarrageTimer(sk),0, 1000);
