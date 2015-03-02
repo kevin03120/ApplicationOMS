@@ -8,10 +8,10 @@ public class Association {
 	private String nom;
 	private boolean adherent;
 	private List<Equipement> listeEquipement;
-	private Sport sport;
+	private List<Sport> listeSport;
 	private Personne contact;
 	
-	public Association(int unId, String unNom, boolean adherent, List<Equipement> uneListeEquipement, Sport unSport, Personne unContact){
+	public Association(int unId, String unNom, boolean adherent, List<Equipement> uneListeEquipement, List<Sport> uneListeSport, Personne unContact){
 		uid = unId;
 		nom = unNom;
 		this.adherent = adherent;
@@ -21,7 +21,7 @@ public class Association {
 		else{
 			listeEquipement = null;
 		}
-		sport = unSport;
+		setListeSport(uneListeSport);
 		contact = unContact;
 	}
 
@@ -57,20 +57,20 @@ public class Association {
 		this.listeEquipement = listeEquipement;
 	}
 
-	public Sport getSport() {
-		return sport;
-	}
-
-	public void setSport(Sport sport) {
-		this.sport = sport;
-	}
-
 	public Personne getContact() {
 		return contact;
 	}
 
 	public void setContact(Personne contact) {
 		this.contact = contact;
+	}
+
+	public List<Sport> getListeSport() {
+		return listeSport;
+	}
+
+	public void setListeSport(List<Sport> listeSport) {
+		this.listeSport = listeSport;
 	}
 	
 	

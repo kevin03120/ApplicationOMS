@@ -4,5 +4,6 @@
     <string name="app_name">OMS</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="info_image">Logo de l\'OMS</string>
 
 </resources>

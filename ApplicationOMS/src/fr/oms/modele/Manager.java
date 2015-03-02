@@ -66,6 +66,6 @@ public class Manager {
 	
 	public void lireDonnees(){
 		accesDonnees.lireDonnees();
-	}
+		}
 
 }

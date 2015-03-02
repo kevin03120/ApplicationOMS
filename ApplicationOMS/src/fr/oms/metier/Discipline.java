@@ -2,7 +2,6 @@ package fr.oms.metier;
 
 import java.util.List;
 
-
 public class Discipline {
 
 	private int uid;
