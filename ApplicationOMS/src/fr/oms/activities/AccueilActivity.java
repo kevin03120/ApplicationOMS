@@ -19,4 +19,9 @@ public class AccueilActivity extends Activity {
 		Intent intent = new Intent(this, InfoActivity.class);
 		startActivity(intent);
 	}
+	
+	public void onAssociationActivity(View v){
+		Intent intent = new Intent(this, ListAssociationActivity.class);
+		startActivity(intent);
+	}
 }

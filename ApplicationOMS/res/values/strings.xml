@@ -15,5 +15,6 @@
     <string name="plan_oms"><u>Plan OMS</u></string>
 	<string name="lien_guide_sport">http://fr.calameo.com/read/00122036544c76167c62c</string>
 	<string name="lien_plan_OMS">http://www.oms-clermont-ferrand.fr/plan-oms</string>
-	
+	<string name="adherents">Adhérents ?</string>
+	<string name="fleche">></string>
 </resources>
