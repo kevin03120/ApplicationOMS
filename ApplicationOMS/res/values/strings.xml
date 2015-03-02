@@ -10,5 +10,10 @@
     <string name="quartier">Les quartiers</string>
     <string name="discipline">Les disciplines</string>
     <string name="info_icone">Information sur l\'OMS</string>
-
+    <string name="titre_info">Autres Informations</string>
+    <string name="guide_sport"><u>Guide des sports</u></string>
+    <string name="plan_oms"><u>Plan OMS</u></string>
+	<string name="lien_guide_sport">http://fr.calameo.com/read/00122036544c76167c62c</string>
+	<string name="lien_plan_OMS">http://www.oms-clermont-ferrand.fr/plan-oms</string>
+	
 </resources>
