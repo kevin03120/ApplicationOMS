@@ -1,6 +1,8 @@
 package fr.oms.modele;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import fr.oms.metier.*;
 
 public class Manager {
@@ -13,7 +15,10 @@ public class Manager {
 	private iAccesDonnees accesDonnees;
 	
 	private Manager(){
-		
+		listeDiscipline = new ArrayList<Discipline>();
+		listeAssociation = new ArrayList<Association>();
+		listeEquipement = new ArrayList<Equipement>();
+		listeQuartier = new ArrayList<Quartier>();
 	}
 	
 	public static Manager getInstance(){
@@ -66,6 +71,6 @@ public class Manager {
 	
 	public void lireDonnees(){
 		accesDonnees.lireDonnees();
-		}
+	}
 
 }
