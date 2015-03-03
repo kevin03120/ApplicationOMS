@@ -45,12 +45,10 @@ public class ListDisciplineActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Dialog dialog=new Dialog(ListDisciplineActivity.this);
-				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-				dialog.setContentView(R.layout.dialog_sport);
-				TextView titreDialog = (TextView)dialog.findViewById(R.id.titreDialogSport);
-				listeSport = (ListView)dialog.findViewById(R.id.listeSport);
+				dialog.setContentView(R.layout.dialog);
+				listeSport = (ListView)dialog.findViewById(R.id.listeDialog);
 			    discipline = Manager.getInstance().getListeDiscipline().get(position);
-				titreDialog.setText(discipline.getNom() + " : ");
+			    dialog.setTitle(discipline.getNom() + " : ");
 				List<String> mesNomsSports = new ArrayList<String>();
 				for(Sport sport : discipline.getListeSport()){
 					mesNomsSports.add(sport.getNom());

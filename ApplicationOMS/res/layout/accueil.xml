@@ -48,6 +48,7 @@
 	   	    android:layout_height="wrap_content"
 	   	    android:layout_width="200dp"
 	   	    android:layout_gravity="center_horizontal"
+	   	    android:onClick="onQuartierActivity"
 	   	    android:text="@string/quartier"
 	   	    android:layout_marginBottom="25dp"/>
 	   	

@@ -27,6 +27,7 @@
         <activity android:name="ListAssociationActivity"></activity>
         <activity android:name="ListEquipementActivity"></activity>
         <activity android:name="ListDisciplineActivity"></activity>
+        <activity android:name="ListQuartierActivity"></activity>
     </application>
 
 </manifest>
