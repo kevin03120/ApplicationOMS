@@ -46,4 +46,5 @@ public class AccueilActivity extends Activity {
 		Intent intent = new Intent(this, ListQuartierActivity.class);
 		startActivity(intent);
 	}
+	
 }
