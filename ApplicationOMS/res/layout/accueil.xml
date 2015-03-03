@@ -50,13 +50,29 @@
 	   	    android:layout_gravity="center_horizontal"
 	   	    android:text="@string/quartier"
 	   	    android:layout_marginBottom="25dp"/>
-	   	
-	   	<ImageView 
-	   	    android:id="@+id/btnAccueilInfo"
-	   	    android:layout_height="25dp"
-	   	    android:layout_width="25dp"
-	   	    android:contentDescription="@string/info_icone"
-	   	    android:background="@drawable/icone_info"
-	   	    android:onClick="onInfoActivity"/>
+
+	   	<LinearLayout
+	   	    android:layout_width="match_parent"
+	   	    android:layout_height="wrap_content" >
+
+	   		<ImageView
+	   		    android:id="@+id/btnAccueilInfo"
+	   		    android:layout_width="25dp"
+	   		    android:layout_height="25dp"
+	   		    android:background="@drawable/icone_info"
+	   		    android:layout_weight="2"
+	   		    android:contentDescription="@string/info_icone"
+	   		    android:onClick="onInfoActivity" />
+
+	   		<Button
+	   		    android:id="@+id/connexion"
+	   		    style="?android:attr/buttonStyleSmall"
+	   		    android:layout_width="wrap_content"
+	   		    android:layout_height="wrap_content"
+	   		    android:layout_weight="4"
+	   		    android:onClick="onConnexionTest"
+	   		    android:text="Sync." />
+
+	   	</LinearLayout>
 
 </LinearLayout>
