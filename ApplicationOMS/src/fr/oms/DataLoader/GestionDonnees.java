@@ -12,6 +12,8 @@ public class GestionDonnees implements iAccesDonnees{
 
 	@Override
 	public void lireDonnees() {
+		Manager.getInstance().getListeAssociation().clear();
+		Manager.getInstance().getListeEquipement().clear();
 		List<Equipement> mesEquipements = new ArrayList<Equipement>();
 		Association association = new Association(0,"Association 1",true,mesEquipements,null,null);
 		Manager.getInstance().getListeAssociation().add(association);
@@ -33,6 +35,19 @@ public class GestionDonnees implements iAccesDonnees{
 		Manager.getInstance().getListeAssociation().add(association);
 		association = new Association(10,"Association 10",false,mesEquipements,null,null);
 		Manager.getInstance().getListeAssociation().add(association);
+		
+		Equipement equipement = new Equipement(0, "Salle 1", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
+		equipement = new Equipement(0, "Gymnase 1", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
+		equipement = new Equipement(0, "Stade Marcel Michelin", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
+		equipement = new Equipement(0, "Parc des sports", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
+		equipement = new Equipement(0, "Boulodrome", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
+		equipement = new Equipement(0, "Salle 2", "", null);
+		Manager.getInstance().getListeEquipement().add(equipement);
 	}
 
 }

@@ -24,4 +24,9 @@ public class AccueilActivity extends Activity {
 		Intent intent = new Intent(this, ListAssociationActivity.class);
 		startActivity(intent);
 	}
+	
+	public void onEquipementActivity(View v){
+		Intent intent = new Intent(this, ListEquipementActivity.class);
+		startActivity(intent);
+	}
 }

@@ -30,6 +30,7 @@
 	   	    android:layout_height="wrap_content"
 	   	    android:layout_width="200dp"
 	   	    android:layout_gravity="center_horizontal"
+	   	    android:onClick="onEquipementActivity"
 	   	    android:text="@string/equipement"
 	   	    android:layout_marginBottom="25dp"/>
 	   	

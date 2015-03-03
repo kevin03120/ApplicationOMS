@@ -6,7 +6,7 @@
 	android:background="@drawable/customborder">
         
         <TextView 
-            android:id="@+id/nom_association"
+            android:id="@+id/nom_element"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"

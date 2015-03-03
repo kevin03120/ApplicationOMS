@@ -23,7 +23,7 @@ public class AssociationAdapter extends ArrayAdapter<Association> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_association_equipement, parent,false);
 		Association association = getItem(position);
-		TextView nomAssociation = (TextView)convertView.findViewById(R.id.nom_association);
+		TextView nomAssociation = (TextView)convertView.findViewById(R.id.nom_element);
 		nomAssociation.setText(association.getNom());
 		return convertView;
 	}
