@@ -25,18 +25,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="AccueilActivity" >
-        </activity>
-        <activity android:name="InfoActivity" >
-        </activity>
-        <activity android:name="ListAssociationActivity" >
-        </activity>
-        <activity android:name="ListEquipementActivity" >
-        </activity>
-        <activity android:name="ListDisciplineActivity" >
-        </activity>
-        <activity android:name="TestConnexionActivity" >
-        </activity>
+
+        <activity android:name="AccueilActivity"></activity>
+        <activity android:name="InfoActivity"></activity>
+        <activity android:name="ListAssociationActivity"></activity>
+        <activity android:name="ListEquipementActivity"></activity>
+        <activity android:name="ListDisciplineActivity"></activity>
+        <activity android:name="ListQuartierActivity"></activity>
+        <activity android:name="TestConnexionActivity" ></activity>
     </application>
 
 </manifest>

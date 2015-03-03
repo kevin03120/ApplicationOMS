@@ -3,11 +3,6 @@ package fr.oms.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.oms.DataLoader.GestionDonnees;
-import fr.oms.adapter.DisciplineAdapter;
-import fr.oms.metier.Discipline;
-import fr.oms.metier.Sport;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -16,8 +11,12 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+import fr.oms.DataLoader.GestionDonnees;
+import fr.oms.adapter.DisciplineAdapter;
+import fr.oms.metier.Discipline;
+import fr.oms.metier.Sport;
+import fr.oms.modele.Manager;
 
 public class ListDisciplineActivity extends Activity {
 
@@ -45,12 +44,10 @@ public class ListDisciplineActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Dialog dialog=new Dialog(ListDisciplineActivity.this);
-				dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-				dialog.setContentView(R.layout.dialog_sport);
-				TextView titreDialog = (TextView)dialog.findViewById(R.id.titreDialogSport);
-				listeSport = (ListView)dialog.findViewById(R.id.listeSport);
+				dialog.setContentView(R.layout.dialog);
+				listeSport = (ListView)dialog.findViewById(R.id.listeDialog);
 			    discipline = Manager.getInstance().getListeDiscipline().get(position);
-				titreDialog.setText(discipline.getNom() + " : ");
+			    dialog.setTitle(discipline.getNom() + " : ");
 				List<String> mesNomsSports = new ArrayList<String>();
 				for(Sport sport : discipline.getListeSport()){
 					mesNomsSports.add(sport.getNom());

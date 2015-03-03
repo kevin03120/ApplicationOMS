@@ -36,8 +36,14 @@ public class AccueilActivity extends Activity {
 	}
 	
 
+
 	public void onConnexionTest(View v){
 		Intent intent = new Intent(this, TestConnexionActivity.class);
+		startActivity(intent);
+	}
+	
+	public void onQuartierActivity(View v){
+		Intent intent = new Intent(this, ListQuartierActivity.class);
 		startActivity(intent);
 	}
 }

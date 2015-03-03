@@ -44,7 +44,7 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 	@Override
 	protected void onPreExecute() {		
 		
-		progressDialog= ProgressDialog.show(list, "Progress Dialog Title Text","Process Description Text", true);
+		progressDialog= ProgressDialog.show(list, "Synchronisation","Synchronisation des données en cours", true);
 		
 	}
 

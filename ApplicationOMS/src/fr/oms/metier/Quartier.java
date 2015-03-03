@@ -1,13 +1,17 @@
 package fr.oms.metier;
 
+import java.util.List;
+
 public class Quartier {
 
 	private int uid;
 	private String nom;
+	private List<Equipement> mesEquipements;
 	
-	public Quartier(int unId, String unNom){
+	public Quartier(int unId, String unNom, List<Equipement> lesEquipements){
 		setUid(unId);
 		setNom(unNom);
+		setMesEquipements(lesEquipements);
 	}
 
 	public int getUid() {
@@ -24,5 +28,13 @@ public class Quartier {
 
 	public void setNom(String nom) {
 		this.nom = nom;
+	}
+
+	public List<Equipement> getMesEquipements() {
+		return mesEquipements;
+	}
+
+	public void setMesEquipements(List<Equipement> mesEquipements) {
+		this.mesEquipements = mesEquipements;
 	}
 }
