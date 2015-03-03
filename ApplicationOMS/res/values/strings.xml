@@ -18,4 +18,5 @@
 	<string name="adherents">Adhérents ?</string>
 	<string name="non_adherents">Non Adhérents ?</string>
 	<string name="fleche">></string>
+	<string name="titreSportDialog">Sports concernant la discipline :</string>
 </resources>
