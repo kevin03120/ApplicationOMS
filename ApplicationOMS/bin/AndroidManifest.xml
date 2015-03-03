@@ -26,6 +26,7 @@
         <activity android:name="InfoActivity"></activity>
         <activity android:name="ListAssociationActivity"></activity>
         <activity android:name="ListEquipementActivity"></activity>
+        <activity android:name="ListDisciplineActivity"></activity>
     </application>
 
 </manifest>
