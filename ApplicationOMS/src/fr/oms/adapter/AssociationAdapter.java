@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class AssociationAdapter extends ArrayAdapter<Association> {
@@ -25,6 +26,10 @@ public class AssociationAdapter extends ArrayAdapter<Association> {
 		Association association = getItem(position);
 		TextView nomAssociation = (TextView)convertView.findViewById(R.id.nom_element);
 		nomAssociation.setText(association.getNom());
+		ImageView logoAdherent = (ImageView)convertView.findViewById(R.id.logo_adherent);
+		if(association.isAdherent()){
+			logoAdherent.setVisibility(0);
+		}
 		return convertView;
 	}
 }

@@ -127,7 +127,7 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 		String UTF8 = "utf8";
 		int BUFFER_SIZE = 8192;
 		connexionViaPost("http://www.oms-clermont-ferrand.fr/user");
-		recupererFichierViaGet("http://www.oms-clermont-ferrand.fr/admin/tableau-de-bord-associations/export.csv");
+		recupererFichierViaGet("http://www.oms-clermont-ferrand.fr/admin/tableau-de-bord-associations/export.csv?status=1&field_club_adherent_value_many_to_one[0]=1&field_club_adherent_value_many_to_one[1]=0&field_club_pc_vil_value=&field_ref_categorie_nid=All&field_club_discipline_nid=All&field_ref_quartier_nid=All&field_club_lieu1_nid=All");
 		try {
 			BufferedReader bis = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), UTF8),BUFFER_SIZE);
 			BufferedWriter bos = new BufferedWriter(new OutputStreamWriter(params[0], UTF8),BUFFER_SIZE);

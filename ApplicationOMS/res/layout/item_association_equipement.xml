@@ -13,5 +13,14 @@
             android:layout_gravity="center_vertical|start"
             android:text="@string/association"
             android:layout_marginBottom="20dp"/>
+        
+        <ImageView 
+            android:id="@+id/logo_adherent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/logoadherent"
+            android:layout_gravity="center_vertical"
+            android:visibility="invisible"
+            android:contentDescription="@string/logo_adherent"/>"
 </LinearLayout>
     

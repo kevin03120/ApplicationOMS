@@ -19,4 +19,7 @@
 	<string name="non_adherents">Non Adhérents ?</string>
 	<string name="fleche">></string>
 	<string name="titreSportDialog">Sports concernant la discipline :</string>
+	<string name="Sync">Sync.</string>
+	<string name="logo_adherent">adherent OMS</string>
+	
 </resources>
