@@ -20,6 +20,7 @@ public class AccueilActivity extends Activity {
 	public void onInfoActivity(View v){
 		Intent intent = new Intent(this, InfoActivity.class);
 		startActivity(intent);
+		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
 	}
 	
 	public void onAssociationActivity(View v){
