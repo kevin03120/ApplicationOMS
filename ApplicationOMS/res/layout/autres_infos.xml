@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@color/Blanc" >
     
     <TextView 
         android:id="@+id/titreAutresInfos"
@@ -10,6 +11,7 @@
         android:text="@string/titre_info"
         android:textSize="30sp"
         android:textStyle="bold|italic"
+        android:color="@color/BleuFonce1"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"/>
     
@@ -27,7 +29,7 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/Bleu2"
             android:onClick="onGuideSport"
 			android:clickable="true"/>
         
@@ -40,7 +42,7 @@
             android:textSize="30sp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="30dp"
-            android:textColor="@android:color/holo_blue_dark"
+            android:textColor="@color/Bleu2"
             android:onClick="onPlanOMS"
 			android:clickable="true"/>
 	    

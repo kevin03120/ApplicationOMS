@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-	android:background="#03A9F4" >
+	android:background="@color/Blanc" >
     
     <TextView 
         android:id="@+id/titreQuartierList"
@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
+        android:textColor="#227fbc"
         android:text="@string/quartier"
         android:textSize="30sp"
         android:textStyle="bold"/>

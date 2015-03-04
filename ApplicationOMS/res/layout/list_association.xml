@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-	android:background="#03A9F4" >
+	android:background="@color/Blanc" >
 
     <TextView
         android:id="@+id/titreAssociationList"
@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
+        android:textColor="@color/BleuFonce1"
         android:text="@string/association"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -30,7 +31,7 @@
             android:text="@string/adherents"
             android:onClick="onClickChkAdherent"
             android:checked="true"
-            android:textColor="@android:color/white"/>
+            android:textColor="#2c97df"/>
         
         <Space
             android:layout_width="25dp"
@@ -43,7 +44,7 @@
             android:checked="true"
             android:onClick="onClickChkNonAdherent"
             android:text="@string/non_adherents"
-            android:textColor="@android:color/white" />
+            android:textColor="#2c97df" />
     </LinearLayout>
 
     <ListView
