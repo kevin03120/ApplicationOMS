@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class QuartierAdapter extends ArrayAdapter<Quartier> {
@@ -24,6 +25,13 @@ public class QuartierAdapter extends ArrayAdapter<Quartier> {
 		Quartier quartier = Manager.getInstance().getListeQuartier().get(position);
 		TextView nomQuartier = (TextView)convertView.findViewById(R.id.nom_element);
 		nomQuartier.setText(quartier.getNom());
+		LinearLayout item = (LinearLayout)convertView.findViewById(R.id.background_item);
+		 if (position % 2 == 0) {
+			 item.setBackgroundResource(R.drawable.customborder);
+		 }
+		 else{
+			 item.setBackgroundResource(R.drawable.customborder_alt);
+		 }
 		return convertView;
 	}
 

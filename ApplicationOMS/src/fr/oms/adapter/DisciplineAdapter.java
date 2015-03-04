@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,6 +36,13 @@ public class DisciplineAdapter extends ArrayAdapter<Discipline> {
 		final Discipline discipline = getItem(position);
 		TextView nomDiscipline = (TextView) convertView.findViewById(R.id.nom_element);
 		nomDiscipline.setText(discipline.getNom());
+		LinearLayout item = (LinearLayout)convertView.findViewById(R.id.background_item_element);
+		 if (position % 2 == 0) {
+			 item.setBackgroundResource(R.drawable.customborder);
+		 }
+		 else{
+			 item.setBackgroundResource(R.drawable.customborder_alt);
+		 }
 		return convertView;
 	}
 
