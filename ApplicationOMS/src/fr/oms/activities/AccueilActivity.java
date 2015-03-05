@@ -2,8 +2,13 @@ package fr.oms.activities;
 
 import fr.oms.DataLoader.ClientHttp;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -42,15 +47,30 @@ public class AccueilActivity extends Activity {
 	}
 	
 	public void onConnexionTest(View v){
-		try {
-			new ClientHttp(AccueilActivity.this).execute(openFileOutput("testDonnees.txt",MODE_PRIVATE));
+		if(isNetworkAvailable(this)){
+			try {
+				new ClientHttp(AccueilActivity.this).execute(openFileOutput("testDonnees.txt",MODE_PRIVATE));
+			}
+			catch (Exception e) 
+			{
+				e.getMessage();
+			} 
 		}
-		catch (Exception e) 
-		{
-			String error=e.getMessage();
-		} 
+		else{
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AccueilActivity.this);
+				alertDialogBuilder.setTitle(R.string.detailCo);
+				alertDialogBuilder
+					.setMessage(getResources().getString(R.string.detailCo))
+					.setCancelable(false)
+					.setPositiveButton("Annuler la synchronisation",new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog,int id) {
+							dialog.dismiss();
+						}
+					  });
+				AlertDialog alertDialog = alertDialogBuilder.create();
+				alertDialog.show();
+			}
 	}
-	
 	public void onQuartierActivity(View v){
 		Intent intent = new Intent(this, ListQuartierActivity.class);
 		startActivity(intent);
@@ -61,5 +81,31 @@ public class AccueilActivity extends Activity {
 	public void onBackPressed() {
 		moveTaskToBack(true);
 	}
+	
+	public boolean isNetworkAvailable( Activity mActivity ) 
+	  { 
+	          Context context = mActivity.getApplicationContext();
+	          ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+	          if (connectivity == null) 
+	          {   
+	        	  return false;
+	          } 
+	          else 
+	          {  
+	        
+		        NetworkInfo[] info = connectivity.getAllNetworkInfo();   
+		        if (info != null) 
+		        {   
+		                for (int i = 0; i <info.length; i++) 
+		                { 
+		                        if (info[i].getState() == NetworkInfo.State.CONNECTED)
+		                        {
+		                                return true; 
+		                        }
+		             }     
+		         } 
+		          return false;
+	          }
+	 }   
 	
 }
