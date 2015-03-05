@@ -1,11 +1,9 @@
 package fr.oms.adapter;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.oms.activities.R;
 import fr.oms.metier.Association;
-import fr.oms.modele.Manager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

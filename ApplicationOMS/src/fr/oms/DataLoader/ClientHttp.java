@@ -25,17 +25,17 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import fr.oms.activities.TestConnexionActivity;
+import fr.oms.activities.AccueilActivity;
 
 public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 
 	private HttpClient client=null;
 	private HttpResponse response=null;
 	private String monCookie;
-	ProgressDialog progressDialog;
-	private TestConnexionActivity list;
+	private ProgressDialog progressDialog;
+	private AccueilActivity list;
 	
-	public ClientHttp(TestConnexionActivity acti){
+	public ClientHttp(AccueilActivity acti){
 		client = new DefaultHttpClient();
 		
 		this.list=acti;
@@ -43,9 +43,7 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 	
 	@Override
 	protected void onPreExecute() {		
-		
 		progressDialog= ProgressDialog.show(list, "Synchronisation","Synchronisation des données en cours", true);
-		
 	}
 
 	

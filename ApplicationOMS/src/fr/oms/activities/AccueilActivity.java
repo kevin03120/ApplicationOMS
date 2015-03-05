@@ -1,5 +1,6 @@
 package fr.oms.activities;
 
+import fr.oms.DataLoader.ClientHttp;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -41,12 +42,14 @@ public class AccueilActivity extends Activity {
 		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
 	}
 	
-
-
 	public void onConnexionTest(View v){
-		Intent intent = new Intent(this, TestConnexionActivity.class);
-		startActivity(intent);
-		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
+		try {
+			new ClientHttp(AccueilActivity.this).execute(openFileOutput("testDonnees.txt",MODE_PRIVATE));
+		}
+		catch (Exception e) 
+		{
+			String error=e.getMessage();
+		} 
 	}
 	
 	public void onQuartierActivity(View v){
