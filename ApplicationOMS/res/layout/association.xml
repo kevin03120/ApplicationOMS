@@ -153,7 +153,9 @@
         android:layout_height="wrap_content"
         android:textColor="@color/Bleu2"
         android:textSize="18sp"
+        android:onClick="onGoSite"
         android:layout_marginBottom="10dp"
+        android:clickable="true"
         android:layout_gravity="center_horizontal|bottom"
         android:text="@string/info_assoc_site"/>
 </FrameLayout>

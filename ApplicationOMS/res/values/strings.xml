@@ -25,5 +25,6 @@
 	<string name="goMap">- Voir sur la carte -</string>
 	<string name="info_assoc_site"><u>Plus d\'informations sur le site</u></string>
 	<string name="pasAdherent">Impossible de voir la fiche d\'une association non adhérente.</string>
+	<string name="lienSite">http://www.oms-clermont-ferrand.fr/</string>
 	
 </resources>

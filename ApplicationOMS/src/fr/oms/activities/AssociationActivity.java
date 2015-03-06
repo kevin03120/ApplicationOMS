@@ -4,8 +4,12 @@ import fr.oms.metier.Association;
 import fr.oms.metier.Personne;
 import fr.oms.modele.Manager;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.widget.TextView;
 
@@ -19,6 +23,7 @@ public class AssociationActivity extends Activity {
 	private TextView horaire;
 	private TextView equipement1;
 	private TextView equipement2;
+	private Association association;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +33,9 @@ public class AssociationActivity extends Activity {
 		setContentView(R.layout.association);
 		Bundle extras = getIntent().getExtras();
 		int position = extras.getInt("position");
-		Association association = Manager.getInstance().getListeAssociation().get(position);
+	    association = Manager.getInstance().getListeAssociation().get(position);
 		recupererToutesViews();
-		placeDonneeDansView(association);
+		placeDonneeDansView();
 	}
 	
 	private void recupererToutesViews(){
@@ -44,7 +49,7 @@ public class AssociationActivity extends Activity {
 		equipement2 = (TextView)findViewById(R.id.lieu_equipement2);
 	}
 	
-	private void placeDonneeDansView(Association association){
+	private void placeDonneeDansView(){
 		Personne pers = association.getContact();
 		nomAssoc.setText(association.getNom());
 		nomContact.setText(pers.getTitre() + " " + pers.getNom() + " " + pers.getPrenom());
@@ -63,5 +68,22 @@ public class AssociationActivity extends Activity {
 		else{
 			equipement1.setText("Aucun equipement connu");
 		}
+	}
+	public void onGoSite(View v){
+		String nomAssoc = association.getNom();
+		nomAssoc = nomAssoc.replace(" ", "-");
+		nomAssoc = nomAssoc.replace("(", "");
+		nomAssoc = nomAssoc.replace(")", "");
+		nomAssoc = nomAssoc.replace("&", "");
+		nomAssoc = nomAssoc.replace("/", "");
+		nomAssoc = nomAssoc.replace("\"", "");
+		nomAssoc = nomAssoc.replace("'", "");
+		nomAssoc = nomAssoc.replace("--", "-");
+		String url = getResources().getString(R.string.lienSite);
+		url = url + "club/" + nomAssoc;
+		Intent i = new Intent(Intent.ACTION_VIEW);
+		i.setData(Uri.parse(url));
+		startActivity(i);
+		Log.i("testString", nomAssoc);
 	}
 }
