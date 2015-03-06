@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class AssociationAdapter extends ArrayAdapter<Association> {
@@ -29,7 +29,7 @@ public class AssociationAdapter extends ArrayAdapter<Association> {
 		if(association.isAdherent()){
 			logoAdherent.setVisibility(0);
 		}
-		LinearLayout item = (LinearLayout)convertView.findViewById(R.id.background_item);
+		FrameLayout item = (FrameLayout)convertView.findViewById(R.id.background_item);
 		 if (position % 2 == 0) {
 			 item.setBackgroundResource(R.drawable.customborder);
 		 }

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Blanc" >
+    <TextView 
+        android:id="@+id/titreAssociation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/association"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="@color/Orange1"/>
+    
+    
+   <LinearLayout 
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_gravity="center_horizontal|center_vertical">
+       
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customborder"
+        android:layout_gravity="center_horizontal|center_vertical">
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/info_image"
+        	android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@android:drawable/ic_menu_call"
+            android:layout_marginRight="20dp"/>
+        
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        	android:layout_gravity="center_horizontal|center_vertical"
+        	android:orientation="vertical">
+            <TextView 
+                android:id="@+id/nomContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+                android:text="@string/association"/>
+            <TextView 
+                android:id="@+id/telFixContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+                android:text="@string/association"/>
+            <TextView 
+                android:id="@+id/telPortContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+                android:text="@string/association"/>
+            <TextView 
+                android:id="@+id/mailContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+                android:text="@string/association"/>
+            
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customborder"
+        android:layout_gravity="center_horizontal|center_vertical">
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/info_image"
+        	android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@android:drawable/ic_menu_my_calendar"
+            android:layout_marginRight="20dp"/>
+      
+        <TextView 
+            android:id="@+id/horaire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/Blanc"
+            android:text="@string/association"/>
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/customborder"
+        android:layout_gravity="center_horizontal|center_vertical">
+        
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/info_image"
+        	android:layout_gravity="center_horizontal|center_vertical"
+            android:background="@android:drawable/ic_menu_mapmode"
+            android:layout_marginRight="20dp"/>
+        
+      <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal|center_vertical">
+	        <TextView 
+	            android:id="@+id/lieu_equipement1"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+	            android:text="@string/association"/>
+	        
+	        <TextView 
+	            android:id="@+id/lieu_equipement2"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@color/Blanc"
+	            android:text="@string/association"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Button 
+        android:id="@+id/btn_map"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/goMap"
+        android:textColor="@color/Blanc"
+        android:background="@drawable/custom_btn_sorbus"/>
+   </LinearLayout>
+   <TextView 
+        android:id="@+id/link_assoc_site"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/Bleu2"
+        android:textSize="18sp"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/info_assoc_site"/>
+</FrameLayout>

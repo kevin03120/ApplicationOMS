@@ -4,13 +4,12 @@ import java.util.List;
 
 import fr.oms.activities.R;
 import fr.oms.metier.Equipement;
-import fr.oms.modele.Manager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 public class EquipementAdapter extends ArrayAdapter<Equipement> {
@@ -26,7 +25,7 @@ public class EquipementAdapter extends ArrayAdapter<Equipement> {
 		Equipement equipement = getItem(position);
 		TextView nomEquipement = (TextView) convertView.findViewById(R.id.nom_element);
 		nomEquipement.setText(equipement.getNom());
-		LinearLayout item = (LinearLayout)convertView.findViewById(R.id.background_item);
+		FrameLayout item = (FrameLayout)convertView.findViewById(R.id.background_item);
 		 if (position % 2 == 0) {
 			 item.setBackgroundResource(R.drawable.customborder);
 		 }

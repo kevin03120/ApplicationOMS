@@ -8,11 +8,14 @@ import fr.oms.adapter.AssociationAdapter;
 import fr.oms.metier.Association;
 import fr.oms.modele.Manager;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class ListAssociationActivity extends Activity {
 
@@ -36,6 +39,25 @@ public class ListAssociationActivity extends Activity {
 		mesAssoc = rendNouvelleListe();
 		AssociationAdapter associationAdapter = new AssociationAdapter(this, 0, Manager.getInstance().getListeAssociation());
 		listeAssociation.setAdapter(associationAdapter);
+		touchAssoc();
+	}
+	
+	private void touchAssoc(){
+		listeAssociation.setOnItemClickListener(new ListView.OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Association assoc = Manager.getInstance().getListeAssociation().get(position);
+				if(assoc.isAdherent()){
+					Intent intent = new Intent(ListAssociationActivity.this, AssociationActivity.class);
+					intent.putExtra("position", position);
+					startActivity(intent);
+				}
+				else{
+					Toast.makeText(ListAssociationActivity.this, ListAssociationActivity.this.getResources().getString(R.string.pasAdherent), Toast.LENGTH_SHORT).show();
+				}
+			}
+		});
 	}
 	
 	public void onClickChkAdherent(View v){

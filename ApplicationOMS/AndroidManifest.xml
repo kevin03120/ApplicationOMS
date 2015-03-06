@@ -34,6 +34,7 @@
         <activity android:name="ListDisciplineActivity"></activity>
         <activity android:name="ListQuartierActivity"></activity>
         <activity android:name="TestConnexionActivity" ></activity>
+        <activity android:name="AssociationActivity"></activity>
     </application>
 
 </manifest>

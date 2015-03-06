@@ -22,5 +22,8 @@
 	<string name="Sync">Sync.</string>
 	<string name="logo_adherent">adherent OMS</string>
 	<string name="detailCo">Pas de connexion Internet !</string>
+	<string name="goMap">- Voir sur la carte -</string>
+	<string name="info_assoc_site"><u>Plus d\'informations sur le site</u></string>
+	<string name="pasAdherent">Impossible de voir la fiche d\'une association non adhérente.</string>
 	
 </resources>
