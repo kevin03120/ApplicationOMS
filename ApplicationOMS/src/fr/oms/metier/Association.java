@@ -8,11 +8,11 @@ public class Association {
 	private String nom;
 	private boolean adherent;
 	private List<Equipement> listeEquipement;
+	private String horraire;
 	private List<Sport> listeSport;
 	private Personne contact;
-	private String horaire;
 	
-	public Association(int unId, String unNom, boolean adherent, List<Equipement> uneListeEquipement, String horaire, List<Sport> uneListeSport, Personne unContact){
+	public Association(int unId, String unNom, boolean adherent, List<Equipement> uneListeEquipement, String horraire,List<Sport> uneListeSport, Personne unContact){
 		uid = unId;
 		nom = unNom;
 		this.adherent = adherent;
@@ -22,9 +22,9 @@ public class Association {
 		else{
 			listeEquipement = null;
 		}
+		setHorraire(horraire);
 		setListeSport(uneListeSport);
 		contact = unContact;
-		this.setHoraire(horaire);
 	}
 
 	public int getUid() {
@@ -74,13 +74,12 @@ public class Association {
 	public void setListeSport(List<Sport> listeSport) {
 		this.listeSport = listeSport;
 	}
-
-	public String getHoraire() {
-		return horaire;
+	public String getHorraire() {
+		return horraire;
 	}
 
-	public void setHoraire(String horaire) {
-		this.horaire = horaire;
+	public void setHorraire(String horraire) {
+		this.horraire = horraire;
 	}
 	
 	

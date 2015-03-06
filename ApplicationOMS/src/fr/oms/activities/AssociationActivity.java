@@ -56,8 +56,8 @@ public class AssociationActivity extends Activity {
 		telFixContact.setText("Tel Fix : " + pers.getTelFixe());
 		telPortContact.setText("Tel Port : " + pers.getTelPortable());
 		mailContact.setText(pers.getEmail());
-		horaire.setText(association.getHoraire());
-		if(association.getListeEquipement().size() >=2){
+		horaire.setText(association.getHorraire());
+		/*if(association.getListeEquipement().size() >=2){
 			equipement1.setText(association.getListeEquipement().get(0).getNom());
 			equipement2.setText(association.getListeEquipement().get(1).getNom());
 		}
@@ -67,7 +67,9 @@ public class AssociationActivity extends Activity {
 		}
 		else{
 			equipement1.setText("Aucun equipement connu");
-		}
+		}*/
+		equipement1.setVisibility(4);
+		equipement2.setVisibility(4);
 	}
 	public void onGoSite(View v){
 		String nomAssoc = association.getNom();
