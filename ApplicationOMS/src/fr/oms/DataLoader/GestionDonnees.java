@@ -20,26 +20,7 @@ public class GestionDonnees implements iAccesDonnees{
 		Manager.getInstance().getListeDiscipline().clear();
 		Manager.getInstance().getListeQuartier().clear();
 		List<Equipement> mesEquipements = new ArrayList<Equipement>();
-//		Association association = new Association(0,"Association 1",true,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(2,"Association 2",false,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(3,"Association 3",true,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(4,"Association 4",false,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(5,"Association 5",true,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(6,"Association 6",false,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(7,"Association 7",true,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(8,"Association 8", false,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(9,"Association 9",true,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
-//		association = new Association(10,"Association 10",false,mesEquipements,null,null);
-//		Manager.getInstance().getListeAssociation().add(association);
+
 		
 		List<Equipement> lesEquipements = new ArrayList<Equipement>();
 		Equipement equipement = new Equipement(0, "Salle 1", "", null);
