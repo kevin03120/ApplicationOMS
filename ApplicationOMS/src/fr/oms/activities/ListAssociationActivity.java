@@ -27,14 +27,15 @@ public class ListAssociationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_association);
-		Manager.getInstance().setAccesDonnees(new GestionDonnees());
-		Manager.getInstance().lireDonnees();
+//		Manager.getInstance().setAccesDonnees(new GestionDonnees());
+//		Manager.getInstance().lireDonnees();
 		filtre = 0;
 		chkAdherent = (CheckBox)findViewById(R.id.chkAdherents);
 		chkNonAdherent = (CheckBox)findViewById(R.id.chkNonAdherents);
 		listeAssociation = (ListView)findViewById(R.id.listeAssociation);
 		mesAssoc = rendNouvelleListe();
 		AssociationAdapter associationAdapter = new AssociationAdapter(this, 0, Manager.getInstance().getListeAssociation());
+		System.out.println("Je passe la liste des assoc "+Manager.getInstance().getListeAssociation().size());
 		listeAssociation.setAdapter(associationAdapter);
 	}
 	

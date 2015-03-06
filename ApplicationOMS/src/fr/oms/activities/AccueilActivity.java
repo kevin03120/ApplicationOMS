@@ -1,12 +1,19 @@
 package fr.oms.activities;
 
+import java.io.File;
+import java.net.URISyntaxException;
+import java.net.URL;
+
+import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
+import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -18,6 +25,11 @@ public class AccueilActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		CSVParser parser=new CSVParser(this);
+		parser.readCSV();
+		Manager.getInstance().getTousLesSport(this);
+		//parser.readCSV("./src/fr/oms/ressources/export.csv");
+		//parser.readCSV(this.getFilesDir().getAbsolutePath()+"/testDonnees.txt");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.accueil);
