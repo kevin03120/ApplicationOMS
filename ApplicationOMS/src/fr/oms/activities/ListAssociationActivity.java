@@ -96,4 +96,5 @@ public class ListAssociationActivity extends Activity {
 				break;
 		}
 	}
+	
 }

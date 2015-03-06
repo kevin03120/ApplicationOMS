@@ -31,7 +31,7 @@ public class AccueilActivity extends Activity {
 	public void onAssociationActivity(View v){
 		Intent intent = new Intent(this, ListAssociationActivity.class);
 		startActivity(intent);
-		overridePendingTransition(R.anim.bottom_to_top, R.anim.top_to_outtop); 
+		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft);
 	}
 	
 	public void onEquipementActivity(View v){
@@ -43,7 +43,7 @@ public class AccueilActivity extends Activity {
 	public void onDisciplineActivity(View v){
 		Intent intent = new Intent(this, ListDisciplineActivity.class);
 		startActivity(intent);
-		overridePendingTransition(R.anim.left_to_right, R.anim.right_to_outright);
+		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft);
 	}
 	
 	public void onConnexionTest(View v){
@@ -74,7 +74,7 @@ public class AccueilActivity extends Activity {
 	public void onQuartierActivity(View v){
 		Intent intent = new Intent(this, ListQuartierActivity.class);
 		startActivity(intent);
-		overridePendingTransition(R.anim.top_to_bottom, R.anim.bottom_to_outbottom); 
+		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
 	}
 	
 	@Override
