@@ -35,12 +35,6 @@ public class CSVParser {
 
 
 	public void readCSV(){
-		//		try {
-		//			br=new BufferedReader(new FileReader(new File(filePath)));
-		//		} catch (FileNotFoundException e) {
-		//			e.printStackTrace();
-		//		}	
-		
 		
 		try {
 			line=br.readLine();
@@ -85,11 +79,7 @@ public class CSVParser {
 					
 
 					String[]mots=ligneCourante.replace("\"", "").split(";");	
-					System.out.println("je récupère l'association n°"+mots[0]);
 					
-					if(mots[0].trim().equals("3815")){
-						System.out.println("ALFA TRUC BIDULE "+ligneCourante);
-					}
 					recupererAssociation(mots);
 				}
 
