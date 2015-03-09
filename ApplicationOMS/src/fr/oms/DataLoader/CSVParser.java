@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,71 +21,111 @@ import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
 
 public class CSVParser {
-	
+
 	private InputStreamReader reader=null;
 	private BufferedReader br = null;
 	private String line ="";
 	private Pattern pattern=Pattern.compile("\\d{4}");
-	
+
 	public CSVParser(Context context) {
 		br=new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.export)));
 	}
-	
-	
+
+
 	public void readCSV(){
-//		try {
-//			br=new BufferedReader(new FileReader(new File(filePath)));
-//		} catch (FileNotFoundException e) {
-//			e.printStackTrace();
-//		}		
+		//		try {
+		//			br=new BufferedReader(new FileReader(new File(filePath)));
+		//		} catch (FileNotFoundException e) {
+		//			e.printStackTrace();
+		//		}	
+		
+		
 		try {
 			line=br.readLine();
 			line=br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
+		
+		
 		while(!line.equals("")){
-			String[]mots=line.replace("\"", "").split(";");			
 			
-			Matcher matcher=pattern.matcher(mots[0]);			
-			if(mots.length>6 && matcher.matches()){
-				System.out.println("je récupère l'association n°"+mots[0]);
-				recupererAssociation(mots);
-			}			
-			try {
-				line=br.readLine();
-			} catch (IOException e) {
+			String ligneCourante="";
+			ligneCourante+=line;
+
+			//Récupère l'UID
+			String uid=line.replace("\"", "").split(";")[0];
+			Matcher matcher=pattern.matcher(uid);	
+
+			try{
+				//Si la ligne commence par %d%d%d%d
+				if(matcher.matches()){
+
+					line=br.readLine();
+					if(line==null){
+						break;
+					}
+					uid=line.replace("\"", "").split(";")[0];
+					matcher=pattern.matcher(uid);
+
+					//Tant que la ligne suivante ne commence pas par %d%d%d%d
+					while(!matcher.matches()){
+						ligneCourante+=line;
+						line=br.readLine();
+						if(line==null){
+							break;
+						}
+						
+						uid=line.replace("\"", "").split(";")[0];
+						matcher=pattern.matcher(uid);
+					}
+
+					String[]mots=ligneCourante.replace("\"", "").split(";");	
+					System.out.println("je récupère l'association n°"+mots[0]);
+					recupererAssociation(mots);
+				}
+
+			}catch(IOException e){
 				e.printStackTrace();
 			}
+			
+//			try {
+//				line=br.readLine();
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+			
 			if(line==null){
 				System.out.println("Fin du parsing des données");
 				System.out.println("Nombre d'associations récupérées : "+Manager.getInstance().getListeAssociation().size());
 				break;
 			}
+			
 		}
+		Collections.sort(Manager.getInstance().getListeAssociation());
 	}
 
 
 	private void recupererAssociation(String[] mots) {
 		// Index 0 = ID de l'association
-		
-			int id=Integer.valueOf(mots[0]);
-			String nom=mots[1];
-			boolean adherent=false;
-			if(mots[3].equals("Adhérent")){
-				adherent=true;
-			}
-			List<Equipement> equipements=recupererEquipement(mots);
-			SportParser parser=new SportParser();
-			List<Sport> sports=null;//parser.parse(mots[8]);
-			Personne personne=recupererPersonne(mots);
-			String horraire="non communiqué";
-			if(mots.length>20){
-				horraire=mots[21];		
-			}
-			Manager.getInstance().getListeAssociation().add(new Association(id, nom, adherent, equipements, horraire, sports, personne));
-	
-		
+
+		int id=Integer.valueOf(mots[0]);
+		String nom=mots[1];
+		boolean adherent=false;
+		if(mots[3].equals("Adhérent")){
+			adherent=true;
+		}
+		List<Equipement> equipements=recupererEquipement(mots);
+		SportParser parser=new SportParser();
+		List<Sport> sports=null;//parser.parse(mots[8]);
+		Personne personne=recupererPersonne(mots);
+		String horraire="non communiqué";
+		if(mots.length>20){
+			horraire=mots[21];		
+		}
+		Manager.getInstance().getListeAssociation().add(new Association(id, nom, adherent, equipements, horraire, sports, personne));
+
+
 	}
 
 
@@ -104,15 +145,15 @@ public class CSVParser {
 			String email=mots[29];
 			String telfixe=mots[30];
 			String telport=mots[31];
-			
+
 			tmp=new Personne(id, titre, nom, prenom, adresse, codePostal, ville, email, telfixe, telport);
 			Manager.getInstance().getListPersonne().add(tmp);
-			
+
 			return tmp;
 		}
 		return null;
-		
-		
+
+
 	}
 
 
@@ -120,24 +161,24 @@ public class CSVParser {
 		ArrayList<Equipement> listeEquipements=new ArrayList<Equipement>();
 		Equipement equip1=Manager.getInstance().recupererEquipementAPartirDuNom(mots[6]);
 		Equipement equip2=Manager.getInstance().recupererEquipementAPartirDuNom(mots[7]);
-		
+
 		if(equip1!=null && equip2!=null){
 			listeEquipements.add(equip1);
 			listeEquipements.add(equip2);
 			return listeEquipements;
 		}		
-		
+
 		if(equip1==null){
 			equip1=readEquipement(mots[6]);
 		}
-		
+
 		if(equip2==null){
 			equip2=readEquipement(mots[7]);
 		}
-		
+
 		listeEquipements.add(equip1);
 		listeEquipements.add(equip2);
-		
+
 		return listeEquipements;
 	}
 

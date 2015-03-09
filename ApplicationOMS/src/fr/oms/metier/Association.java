@@ -2,7 +2,7 @@ package fr.oms.metier;
 
 import java.util.List;
 
-public class Association {
+public class Association implements Comparable<Association> {
 
 	private int uid;
 	private String nom;
@@ -80,6 +80,15 @@ public class Association {
 
 	public void setHorraire(String horraire) {
 		this.horraire = horraire;
+	}
+
+	@Override
+	public int compareTo(Association another) {
+		int i = nom.compareTo(another.getNom());
+	        if(i != 0) {            
+	              return i;
+	        }       
+		return 0;
 	}
 	
 	
