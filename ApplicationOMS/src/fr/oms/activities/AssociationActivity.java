@@ -78,7 +78,7 @@ public class AssociationActivity extends Activity {
 		horaire.setText(association.getHorraire());
 		//equipement1.setText(getResources().getString(R.string.equipementNonDispo));
 		if(association.getListeEquipement()!=null){
-			if(association.getListeEquipement().size() >=2){			
+			if(association.getListeEquipement().size() >=2){	
 				equipement1.setText(association.getListeEquipement().get(0).getNom());
 				equipement2.setText(association.getListeEquipement().get(1).getNom());
 			}
@@ -88,8 +88,8 @@ public class AssociationActivity extends Activity {
 			}			
 		}else{
 			equipement1.setText("Aucun equipement connu");
+			equipement2.setVisibility(4);
 		}
-		equipement2.setVisibility(4);
 		
 	}
 	public void onGoSite(View v){
