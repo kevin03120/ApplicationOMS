@@ -1,12 +1,13 @@
 package fr.oms.metier;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Discipline {
 
 	private int uid;
 	private String nom;
-	private List<Sport> listeSport;
+	private List<Sport> listeSport = new ArrayList<Sport>();
 	
 	public Discipline(int unId, String unNom, List<Sport> uneListeSport){
 		uid = unId;

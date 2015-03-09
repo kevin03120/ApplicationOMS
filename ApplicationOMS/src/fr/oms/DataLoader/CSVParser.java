@@ -1,9 +1,6 @@
 package fr.oms.DataLoader;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -22,7 +19,6 @@ import fr.oms.modele.Manager;
 
 public class CSVParser {
 
-	private InputStreamReader reader=null;
 	private BufferedReader br = null;
 	private String line ="";
 	private Pattern pattern=Pattern.compile("\\d{4}");
@@ -117,7 +113,7 @@ public class CSVParser {
 		}
 		List<Equipement> equipements=recupererEquipement(mots);
 		SportParser parser=new SportParser();
-		List<Sport> sports=null;//parser.parse(mots[8]);
+		List<Sport> sports = null;//parser.parse(mots[8]);
 		Personne personne=recupererPersonne(mots);
 		String horraire="non communiqué";
 		if(mots.length>20){
@@ -184,8 +180,6 @@ public class CSVParser {
 
 
 	private Equipement readEquipement(String mots) {
-		int id=Manager.getInstance().getListeEquipement().size();
-		String nom=mots;
 		return null;
 	}
 

@@ -1,13 +1,17 @@
 package fr.oms.modele;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import android.content.Context;
+import android.content.res.Resources.NotFoundException;
+import android.util.Log;
+import fr.oms.activities.ListDisciplineActivity;
 import fr.oms.activities.R;
 import fr.oms.metier.Association;
 import fr.oms.metier.Discipline;
@@ -37,12 +41,96 @@ public class Manager {
 		//getTousLesSport();
 	}
 	
+	private void remplieListeDiscipline(Context context){
+		listeDiscipline.clear();
+		List<Sport> mesSports = new ArrayList<Sport>();
+		Discipline discipline = new Discipline(1, "Activités de détente et d'entretien", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(2, "Multisports - Omnisports", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(3, "Sport Collectif en Salle", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(4, "Sport Collectif Extérieur", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(5, "Sport d'eau", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(6, "Sport de Combat", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(7, "Sport de nature", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(8, "Sport de neige ou de glace", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(9, "Sport Individuel en salle", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(10, "Sport Individuel Extérieur", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(11, "Sports Mécaniques", mesSports);
+		listeDiscipline.add(discipline);
+		discipline = new Discipline(12, "Pratiques Adaptées", mesSports);
+		listeDiscipline.add(discipline);
+		remplieListSportDiscipline(context);
+	}
+	
+	private void remplieListSportDiscipline(Context context){
+		BufferedReader br = null;
+		String line="";	
+		Discipline discipline = null;
+		
+		try {
+			br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.sport_discipline), "UTF-8"));
+		} catch (UnsupportedEncodingException | NotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
+		try {
+			line = br.readLine();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		while (line!=null && !line.equals("")) {
+			if(line.contains("d.")){
+				line = line.replace("d.", "");
+				for(Discipline d : listeDiscipline){
+					if(d.getNom() == line){
+						discipline = d;
+					}
+				}
+			}
+			else{
+				line = line.replace("s.", "");
+				for(Sport s : listeSport){
+					if(s.getNom()==line){
+						discipline.getListeSport().add(s);
+					}
+				}
+			}
+			Log.i("testLine", line);
+			try {
+				line=br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		try {
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void getTousLesSport(Context context) {
 		BufferedReader br = null;
 		String line="";		
 		int idSport=0;
 		
-		br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.sports)));		
+		try {
+			br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.sports), "UTF-8"));
+		} catch (UnsupportedEncodingException | NotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
 		try {
 			line = br.readLine();
 		} catch (IOException e) {
@@ -64,6 +152,7 @@ public class Manager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		remplieListeDiscipline(context);
 	}
 
 	public static Manager getInstance(){
