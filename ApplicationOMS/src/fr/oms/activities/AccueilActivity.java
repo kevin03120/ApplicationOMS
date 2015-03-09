@@ -1,9 +1,5 @@
 package fr.oms.activities;
 
-import java.io.File;
-import java.net.URISyntaxException;
-import java.net.URL;
-
 import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
 import fr.oms.modele.Manager;
@@ -13,7 +9,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;

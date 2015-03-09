@@ -26,5 +26,6 @@
 	<string name="info_assoc_site"><u>Plus d\'informations sur le site</u></string>
 	<string name="pasAdherent">Impossible de voir la fiche d\'une association non adhérente.</string>
 	<string name="lienSite">http://www.oms-clermont-ferrand.fr/</string>
-	
+	<string name="contactNonDispo">Aucun contact disponible</string>
+	<string name="equipementNonDispo">Aucun equipement disponible</string>
 </resources>

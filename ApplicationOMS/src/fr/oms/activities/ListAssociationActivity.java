@@ -3,7 +3,6 @@ package fr.oms.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.oms.DataLoader.GestionDonnees;
 import fr.oms.adapter.AssociationAdapter;
 import fr.oms.metier.Association;
 import fr.oms.modele.Manager;
@@ -48,10 +47,31 @@ public class ListAssociationActivity extends Activity {
 
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Association assoc = Manager.getInstance().getListeAssociation().get(position);
+				List<Association> mesAssociationsAdherentes = new ArrayList<Association>();
+				List<Association> mesAssociationsNonAdherentes = new ArrayList<Association>();
+				for(Association a : Manager.getInstance().getListeAssociation()){
+					if(a.isAdherent()){
+						mesAssociationsAdherentes.add(a);
+					}
+					else{
+						mesAssociationsNonAdherentes.add(a);
+					}
+				}
+				Association assoc = null;
+				if(ListAssociationActivity.this.filtre == 0){
+					assoc = Manager.getInstance().getListeAssociation().get(position);
+				}
+				else if(ListAssociationActivity.this.filtre == 1)
+				{
+					assoc = mesAssociationsAdherentes.get(position);
+				}
+				else if(ListAssociationActivity.this.filtre == 2)
+				{
+					assoc = mesAssociationsNonAdherentes.get(position);
+				}
 				if(assoc.isAdherent()){
 					Intent intent = new Intent(ListAssociationActivity.this, AssociationActivity.class);
-					intent.putExtra("position", position);
+					intent.putExtra("position", assoc.getUid());
 					startActivity(intent);
 				}
 				else{
