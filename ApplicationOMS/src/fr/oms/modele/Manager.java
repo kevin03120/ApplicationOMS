@@ -47,8 +47,7 @@ public class Manager {
 			line = br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		while (line!=null && !line.equals("")) {
 			listeSport.add(new Sport(idSport,line.trim()));		
 			try {

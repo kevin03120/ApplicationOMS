@@ -18,6 +18,7 @@ public class SportParser {
 	private List<Sport> listeDesSportsARemplir;
 
 	public SportParser() {
+		
 		listeReference=Manager.getInstance().getListeSport();
 	}
 
