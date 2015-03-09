@@ -7,12 +7,17 @@ public class Discipline {
 
 	private int uid;
 	private String nom;
-	private List<Sport> listeSport = new ArrayList<Sport>();
+	private List<Sport> listeSport;
 	
 	public Discipline(int unId, String unNom, List<Sport> uneListeSport){
 		uid = unId;
 		nom = unNom;
-		listeSport = uneListeSport;
+		if(uneListeSport == null){
+			listeSport = new ArrayList<Sport>();
+		}
+		else{
+			listeSport = uneListeSport;
+		}
 	}
 
 	public int getUid() {

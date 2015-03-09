@@ -3,15 +3,15 @@ package fr.oms.modele;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import android.util.Log;
-import fr.oms.activities.ListDisciplineActivity;
 import fr.oms.activities.R;
 import fr.oms.metier.Association;
 import fr.oms.metier.Discipline;
@@ -43,30 +43,29 @@ public class Manager {
 	
 	private void remplieListeDiscipline(Context context){
 		listeDiscipline.clear();
-		List<Sport> mesSports = new ArrayList<Sport>();
-		Discipline discipline = new Discipline(1, "Activités de détente et d'entretien", mesSports);
+		Discipline discipline = new Discipline(1, "Activités de détente et d'entretien", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(2, "Multisports - Omnisports", mesSports);
+		discipline = new Discipline(2, "Multisports - Omnisports", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(3, "Sport Collectif en Salle", mesSports);
+		discipline = new Discipline(3, "Sport Collectif en Salle", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(4, "Sport Collectif Extérieur", mesSports);
+		discipline = new Discipline(4, "Sport Collectif Extérieur", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(5, "Sport d'eau", mesSports);
+		discipline = new Discipline(5, "Sport d'eau", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(6, "Sport de Combat", mesSports);
+		discipline = new Discipline(6, "Sport de Combat", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(7, "Sport de nature", mesSports);
+		discipline = new Discipline(7, "Sport de nature", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(8, "Sport de neige ou de glace", mesSports);
+		discipline = new Discipline(8, "Sport de neige ou de glace", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(9, "Sport Individuel en salle", mesSports);
+		discipline = new Discipline(9, "Sport Individuel en salle", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(10, "Sport Individuel Extérieur", mesSports);
+		discipline = new Discipline(10, "Sport Individuel Extérieur", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(11, "Sports Mécaniques", mesSports);
+		discipline = new Discipline(11, "Sports Mécaniques", null);
 		listeDiscipline.add(discipline);
-		discipline = new Discipline(12, "Pratiques Adaptées", mesSports);
+		discipline = new Discipline(12, "Pratiques Adaptées", null);
 		listeDiscipline.add(discipline);
 		remplieListSportDiscipline(context);
 	}
@@ -74,34 +73,41 @@ public class Manager {
 	private void remplieListSportDiscipline(Context context){
 		BufferedReader br = null;
 		String line="";	
-		Discipline discipline = null;
-		
+		int numDiscipline = 0;
+		Reader reader = null;
 		try {
-			br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.sport_discipline), "UTF-8"));
+			reader = new InputStreamReader(context.getResources().openRawResource(R.raw.sport_discipline), "UTF8");
 		} catch (UnsupportedEncodingException | NotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}		
+		}
+		
+		br = new BufferedReader(reader);
+
 		try {
 			line = br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		while (line!=null && !line.equals("")) {
 			if(line.contains("d.")){
+				numDiscipline = 0;
 				line = line.replace("d.", "");
 				for(Discipline d : listeDiscipline){
-					if(d.getNom() == line){
-						discipline = d;
+					if(d.getNom().equals(line)){
+						numDiscipline = d.getUid();
 					}
 				}
 			}
 			else{
 				line = line.replace("s.", "");
 				for(Sport s : listeSport){
-					if(s.getNom()==line){
-						discipline.getListeSport().add(s);
+					if(s.getNom().equals(line)){
+						for(Discipline d : listeDiscipline){
+							if(d.getUid()==numDiscipline){
+								d.getListeSport().add(s);
+							}
+						}
 					}
 				}
 			}
@@ -135,8 +141,7 @@ public class Manager {
 			line = br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 		while (line!=null && !line.equals("")) {
 			listeSport.add(new Sport(idSport,line.trim()));		
 			try {

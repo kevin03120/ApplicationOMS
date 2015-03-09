@@ -22,7 +22,7 @@ public class AccueilActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		CSVParser parser=new CSVParser(this);
 		parser.readCSV();
-		Manager.getInstance().getTousLesSport(this);
+		//Manager.getInstance().getTousLesSport(this);
 		//parser.readCSV("./src/fr/oms/ressources/export.csv");
 		//parser.readCSV(this.getFilesDir().getAbsolutePath()+"/testDonnees.txt");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);

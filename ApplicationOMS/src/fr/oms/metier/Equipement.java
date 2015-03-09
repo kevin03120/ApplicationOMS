@@ -1,7 +1,7 @@
 package fr.oms.metier;
 
 
-public class Equipement {
+public class Equipement implements Comparable<Equipement> {
 
 	private int uid;
 	private String nom;
@@ -45,6 +45,15 @@ public class Equipement {
 
 	public void setQuartier(Quartier quartier) {
 		this.quartier = quartier;
+	}
+
+	@Override
+	public int compareTo(Equipement another) {
+		int i = nom.compareTo(another.getNom());
+        if(i != 0) {            
+              return i;
+        }       
+	return 0;
 	}
 	
 	

@@ -14,6 +14,7 @@ import fr.oms.activities.R;
 import fr.oms.metier.Association;
 import fr.oms.metier.Equipement;
 import fr.oms.metier.Personne;
+import fr.oms.metier.Quartier;
 import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
 
@@ -24,6 +25,7 @@ public class CSVParser {
 	private Pattern pattern=Pattern.compile("\\d{4}");
 
 	public CSVParser(Context context) {
+		Manager.getInstance().getTousLesSport(context);
 		br=new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.export)));
 	}
 
@@ -75,21 +77,18 @@ public class CSVParser {
 						uid=line.replace("\"", "").split(";")[0];
 						matcher=pattern.matcher(uid);
 					}
+					
+					
 
 					String[]mots=ligneCourante.replace("\"", "").split(";");	
 					System.out.println("je récupère l'association n°"+mots[0]);
+					
 					recupererAssociation(mots);
 				}
 
 			}catch(IOException e){
 				e.printStackTrace();
 			}
-			
-//			try {
-//				line=br.readLine();
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
 			
 			if(line==null){
 				System.out.println("Fin du parsing des données");
@@ -99,6 +98,7 @@ public class CSVParser {
 			
 		}
 		Collections.sort(Manager.getInstance().getListeAssociation());
+		Collections.sort(Manager.getInstance().getListeEquipement());
 	}
 
 
@@ -113,7 +113,7 @@ public class CSVParser {
 		}
 		List<Equipement> equipements=recupererEquipement(mots);
 		SportParser parser=new SportParser();
-		List<Sport> sports = null;//parser.parse(mots[8]);
+		List<Sport> sports=parser.parse(mots[8]);
 		Personne personne=recupererPersonne(mots);
 		String horraire="non communiqué";
 		if(mots.length>20){
@@ -170,16 +170,29 @@ public class CSVParser {
 
 		if(equip2==null){
 			equip2=readEquipement(mots[7]);
+		}			
+		
+		if(equip1!=null){
+			listeEquipements.add(equip1);			
 		}
-
-		listeEquipements.add(equip1);
-		listeEquipements.add(equip2);
-
+		if(equip2!=null){
+			listeEquipements.add(equip2);
+		}	
+		
 		return listeEquipements;
 	}
 
 
 	private Equipement readEquipement(String mots) {
+		if(!mots.equals("")){
+			int id=Manager.getInstance().getListeEquipement().size();
+			String nom=mots;
+			String adresse="Pas encore d'adresse";
+			Quartier quartier=null;
+			Equipement nouveauEquip=new Equipement(id, nom, adresse, quartier);
+			Manager.getInstance().getListeEquipement().add(nouveauEquip);
+			return nouveauEquip;
+		}
 		return null;
 	}
 
