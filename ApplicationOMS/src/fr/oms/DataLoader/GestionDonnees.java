@@ -3,10 +3,8 @@ package fr.oms.DataLoader;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.oms.metier.Association;
 import fr.oms.metier.Discipline;
 import fr.oms.metier.Equipement;
-import fr.oms.metier.Personne;
 import fr.oms.metier.Quartier;
 import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;

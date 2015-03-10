@@ -28,8 +28,8 @@ public class ListQuartierActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_quartier);
-		Manager.getInstance().setAccesDonnees(new GestionDonnees());
-		Manager.getInstance().lireDonnees();
+//		Manager.getInstance().setAccesDonnees(new GestionDonnees());
+//		Manager.getInstance().lireDonnees();
 		
 		listeQuartier = (ListView)findViewById(R.id.listeQuartier);
 		QuartierAdapter quartierAdapter = new QuartierAdapter(this, 0, Manager.getInstance().getListeQuartier());

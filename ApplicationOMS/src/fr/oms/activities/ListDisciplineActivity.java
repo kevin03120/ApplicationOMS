@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
-import fr.oms.DataLoader.GestionDonnees;
 import fr.oms.adapter.DisciplineAdapter;
 import fr.oms.metier.Discipline;
 import fr.oms.metier.Sport;
@@ -27,8 +26,6 @@ public class ListDisciplineActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_discipline);
-		Manager.getInstance().setAccesDonnees(new GestionDonnees());
-		Manager.getInstance().lireDonnees();
 		
 		DisciplineAdapter disciplineAdapter = new DisciplineAdapter(this, 0, Manager.getInstance().getListeDiscipline());
 		listeDiscipline = (ListView) findViewById(R.id.listeDiscipline);

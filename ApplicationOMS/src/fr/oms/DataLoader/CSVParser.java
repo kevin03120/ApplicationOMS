@@ -1,9 +1,6 @@
 package fr.oms.DataLoader;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -23,7 +20,6 @@ import fr.oms.modele.Manager;
 
 public class CSVParser {
 
-	private InputStreamReader reader=null;
 	private BufferedReader br = null;
 	private String line ="";
 	private Pattern pattern=Pattern.compile("\\d{4}");
@@ -35,17 +31,21 @@ public class CSVParser {
 
 
 	public void readCSV(){
-		
+
+		Manager.getInstance().getListeAssociation().clear();;
+		Manager.getInstance().getListeEquipement().clear();;
+		Manager.getInstance().getListeQuartier().clear();;
+
 		try {
 			line=br.readLine();
 			line=br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
-		
-		
+
+
 		while(!line.equals("")){
-			
+
 			String ligneCourante="";
 			ligneCourante+=line;
 
@@ -71,31 +71,32 @@ public class CSVParser {
 						if(line==null){
 							break;
 						}
-						
+
 						uid=line.replace("\"", "").split(";")[0];
 						matcher=pattern.matcher(uid);
 					}
-					
-					
+
+
 
 					String[]mots=ligneCourante.replace("\"", "").split(";");	
-					
+
 					recupererAssociation(mots);
 				}
 
 			}catch(IOException e){
 				e.printStackTrace();
 			}
-			
+
 			if(line==null){
 				System.out.println("Fin du parsing des données");
 				System.out.println("Nombre d'associations récupérées : "+Manager.getInstance().getListeAssociation().size());
 				break;
 			}
-			
+
 		}
 		Collections.sort(Manager.getInstance().getListeAssociation());
 		Collections.sort(Manager.getInstance().getListeEquipement());
+		Collections.sort(Manager.getInstance().getListeQuartier());
 	}
 
 
@@ -168,15 +169,42 @@ public class CSVParser {
 		if(equip2==null){
 			equip2=readEquipement(mots[7]);
 		}			
-		
+		Quartier q=recupereQuartier(mots[5]);
 		if(equip1!=null){
+			
+			if(q!=null){
+				equip1.setQuartier(q);
+				if(!Manager.getInstance().getListeQuartier().get(q.getUid()).getMesEquipements().contains(equip1)){
+					Manager.getInstance().getListeQuartier().get(q.getUid()).getMesEquipements().add(equip1);
+				}
+
+			}
 			listeEquipements.add(equip1);			
 		}
 		if(equip2!=null){
 			listeEquipements.add(equip2);
 		}	
-		
+
 		return listeEquipements;
+	}
+
+
+	private Quartier recupereQuartier(String mots) {
+		if(!mots.equals("")){
+			Quartier tmp=Manager.getInstance().recupereQuartierAPartirDuNom(mots);
+			if(tmp!=null){
+				return tmp;
+			}else{
+				int id=Manager.getInstance().getListeQuartier().size();
+				System.out.println("ID "+id);
+				String nom=mots;
+				List<Equipement> listEquipements=new ArrayList<Equipement>();
+				tmp=new Quartier(id, nom, listEquipements);
+				Manager.getInstance().getListeQuartier().add(tmp);
+				return tmp;
+			}
+		}	
+		return null;
 	}
 
 
@@ -190,7 +218,7 @@ public class CSVParser {
 			Manager.getInstance().getListeEquipement().add(nouveauEquip);
 			return nouveauEquip;
 		}
-		return null;		
+		return null;
 	}
 
 }

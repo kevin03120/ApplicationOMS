@@ -1,6 +1,5 @@
 package fr.oms.activities;
 
-import fr.oms.DataLoader.GestionDonnees;
 import fr.oms.adapter.EquipementAdapter;
 import fr.oms.modele.Manager;
 import android.app.Activity;

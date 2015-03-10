@@ -2,7 +2,7 @@ package fr.oms.metier;
 
 import java.util.List;
 
-public class Quartier {
+public class Quartier implements Comparable<Quartier> {
 
 	private int uid;
 	private String nom;
@@ -36,5 +36,14 @@ public class Quartier {
 
 	public void setMesEquipements(List<Equipement> mesEquipements) {
 		this.mesEquipements = mesEquipements;
+	}
+
+	@Override
+	public int compareTo(Quartier another) {
+		int i = nom.compareTo(another.getNom());
+        if(i != 0) {            
+              return i;
+        }       
+	return 0;
 	}
 }

@@ -51,11 +51,11 @@ public class SportParser {
 		return tmp;
 	}
 
-	private void afficherLesSport(List<String> liste) {
+	/*private void afficherLesSport(List<String> liste) {
 		for(String s:liste){
 			System.out.println(s);
 		}		
-	}
+	}*/
 
 	private Sport recupererUnSport(String chaine){
 		//System.out.println("Je dois couper : "+chaine);
