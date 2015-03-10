@@ -5,6 +5,7 @@ import java.util.List;
 
 import fr.oms.adapter.AssociationAdapter;
 import fr.oms.metier.Association;
+import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,23 +24,44 @@ public class ListAssociationActivity extends Activity {
 	private CheckBox chkAdherent;
 	private CheckBox chkNonAdherent;
 	private List<Association> mesAssoc;
+	private boolean isFiltreSport = false;
+	private List<Association> mesAssocFiltreSport;
+	private int idSport = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_association);
-//		Manager.getInstance().setAccesDonnees(new GestionDonnees());
-//		Manager.getInstance().lireDonnees();
 		filtre = 0;
+		if(getIntent().getExtras()!=null){
+			isFiltreSport = true;
+			idSport = getIntent().getExtras().getInt("idSport");
+			filtre = 3;
+		}
 		chkAdherent = (CheckBox)findViewById(R.id.chkAdherents);
 		chkNonAdherent = (CheckBox)findViewById(R.id.chkNonAdherents);
 		listeAssociation = (ListView)findViewById(R.id.listeAssociation);
 		mesAssoc = rendNouvelleListe();
-		AssociationAdapter associationAdapter = new AssociationAdapter(this, 0, Manager.getInstance().getListeAssociation());
-		System.out.println("Je passe la liste des assoc "+Manager.getInstance().getListeAssociation().size());
-		listeAssociation.setAdapter(associationAdapter);
-		touchAssoc();
+		mesAssocFiltreSport = new ArrayList<Association>();
+		if(isFiltreSport){
+			for(Association a : Manager.getInstance().getListeAssociation()){
+				for(Sport s : a.getListeSport()){
+					if(s.getId() == idSport){
+						mesAssocFiltreSport.add(a);
+					}
+				}
+			}
+			AssociationAdapter associationAdapter = new AssociationAdapter(this, 0, mesAssocFiltreSport);
+			listeAssociation.setAdapter(associationAdapter);
+			touchAssoc();
+		}
+		else{
+			AssociationAdapter associationAdapter = new AssociationAdapter(this, 0, Manager.getInstance().getListeAssociation());
+			System.out.println("Je passe la liste des assoc "+Manager.getInstance().getListeAssociation().size());
+			listeAssociation.setAdapter(associationAdapter);
+			touchAssoc();
+		}
 	}
 	
 	private void touchAssoc(){
@@ -49,25 +71,30 @@ public class ListAssociationActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				List<Association> mesAssociationsAdherentes = new ArrayList<Association>();
 				List<Association> mesAssociationsNonAdherentes = new ArrayList<Association>();
+				List<Association> mesAssociationsAdherentesFiltresSport = new ArrayList<Association>();
+				List<Association> mesAssociationsNonAdherentesFiltresSport  = new ArrayList<Association>();
 				for(Association a : Manager.getInstance().getListeAssociation()){
 					if(a.isAdherent()){
 						mesAssociationsAdherentes.add(a);
+						if(mesAssocFiltreSport.contains(a)){
+							mesAssociationsAdherentesFiltresSport.add(a);
+						}
 					}
 					else{
 						mesAssociationsNonAdherentes.add(a);
+						if(mesAssocFiltreSport.contains(a)){
+							mesAssociationsNonAdherentesFiltresSport.add(a);
+						}
 					}
 				}
 				Association assoc = null;
-				if(ListAssociationActivity.this.filtre == 0){
-					assoc = Manager.getInstance().getListeAssociation().get(position);
-				}
-				else if(ListAssociationActivity.this.filtre == 1)
-				{
-					assoc = mesAssociationsAdherentes.get(position);
-				}
-				else if(ListAssociationActivity.this.filtre == 2)
-				{
-					assoc = mesAssociationsNonAdherentes.get(position);
+				switch(ListAssociationActivity.this.filtre){
+				case 0 : assoc = Manager.getInstance().getListeAssociation().get(position); break;
+				case 1 : assoc = mesAssociationsAdherentes.get(position); break;
+				case 2 : assoc = mesAssociationsNonAdherentes.get(position); break;
+				case 3 : assoc = mesAssocFiltreSport.get(position); break;
+				case 4 : assoc = mesAssociationsNonAdherentesFiltresSport.get(position); break;
+				case 5 : assoc = mesAssociationsAdherentesFiltresSport.get(position); break;
 				}
 				if(assoc.isAdherent()){
 					Intent intent = new Intent(ListAssociationActivity.this, AssociationActivity.class);
@@ -96,16 +123,31 @@ public class ListAssociationActivity extends Activity {
 	}
 	
 	private void AfficheListe(){
-		if(chkNonAdherent.isChecked()){
-			if(chkAdherent.isChecked()){
-				filtre = 0;
+		if(!isFiltreSport){
+			if(chkNonAdherent.isChecked()){
+				if(chkAdherent.isChecked()){
+					filtre = 0;
+				}
+				else{
+					filtre = 2;
+				}
 			}
 			else{
-				filtre = 2;
+				filtre = 1;
 			}
 		}
 		else{
-			filtre = 1;
+			if(chkNonAdherent.isChecked()){
+				if(chkAdherent.isChecked()){
+					filtre = 3;
+				}
+				else{
+					filtre = 4;
+				}
+			}
+			else{
+				filtre = 5;
+			}
 		}
 		mesAssoc = rendNouvelleListe();
 		rentreAssociationDansListeSelonFiltre(mesAssoc);
@@ -122,6 +164,7 @@ public class ListAssociationActivity extends Activity {
 	}
 	
 	private void rentreAssociationDansListeSelonFiltre(List<Association> mesAssocs){
+		boolean sportExist = false;
 		switch(filtre){
 		case 0 : mesAssocs = Manager.getInstance().getListeAssociation();
 				break;
@@ -134,6 +177,53 @@ public class ListAssociationActivity extends Activity {
 		case 2 : for(Association a : Manager.getInstance().getListeAssociation()){
 					if(a.isAdherent()){
 						mesAssocs.remove(a);
+					}
+				}
+				break;
+		case 3 : for(Association a : Manager.getInstance().getListeAssociation()){
+						for(Sport s : a.getListeSport()){
+							if(s.getId() == idSport){
+								sportExist = true;
+							}
+						}
+						if(!sportExist){
+							mesAssocs.remove(a);
+						}
+						sportExist = false;
+				 }
+				break;
+		
+		case 4 : for(Association a : Manager.getInstance().getListeAssociation()){
+					if(a.isAdherent()){
+						mesAssocs.remove(a);
+					}
+					if(mesAssocs.contains(a)){
+						for(Sport s : a.getListeSport()){
+							if(s.getId() == idSport){
+								sportExist = true;
+							}
+						}
+						if(!sportExist){
+							mesAssocs.remove(a);
+						}
+						sportExist = false;
+					}
+				}
+				break;
+		case 5 : for(Association a : Manager.getInstance().getListeAssociation()){
+					if(!a.isAdherent()){
+						mesAssocs.remove(a);
+					}
+					if(mesAssocs.contains(a)){
+						for(Sport s : a.getListeSport()){
+							if(s.getId() == idSport){
+								sportExist = true;
+							}
+						}
+						if(!sportExist){
+							mesAssocs.remove(a);
+						}
+						sportExist = false;
 					}
 				}
 				break;

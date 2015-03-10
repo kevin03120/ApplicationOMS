@@ -2,7 +2,6 @@ package fr.oms.activities;
 
 import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
