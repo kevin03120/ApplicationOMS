@@ -5,13 +5,13 @@ import java.util.List;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 import fr.oms.adapter.DisciplineAdapter;
 import fr.oms.metier.Discipline;
 import fr.oms.metier.Sport;
@@ -61,7 +61,10 @@ public class ListDisciplineActivity extends Activity {
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 						Sport sport = discipline.getListeSport().get(position);
-						Toast.makeText(ListDisciplineActivity.this, sport.getNom(), Toast.LENGTH_SHORT).show();
+						int idSport = sport.getId();
+						Intent intent = new Intent(ListDisciplineActivity.this, ListAssociationActivity.class);
+						intent.putExtra("idSport", idSport);
+						startActivity(intent);
 					}
 					
 				});

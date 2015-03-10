@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,11 +76,12 @@ public class Manager {
 		Reader reader = null;
 		try {
 			reader = new InputStreamReader(context.getResources().openRawResource(R.raw.sport_discipline), "UTF8");
-		} catch (UnsupportedEncodingException | NotFoundException e1) {
-			// TODO Auto-generated catch block
+		} catch (UnsupportedEncodingException e1) {
+			e1.printStackTrace();
+		} catch (NotFoundException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		br = new BufferedReader(reader);
 
 		try {
@@ -133,10 +133,12 @@ public class Manager {
 		
 		try {
 			br = new BufferedReader(new InputStreamReader(context.getResources().openRawResource(R.raw.sports), "UTF-8"));
-		} catch (UnsupportedEncodingException | NotFoundException e1) {
-			// TODO Auto-generated catch block
+		} catch (UnsupportedEncodingException e1) {
 			e1.printStackTrace();
-		}		
+		} catch (NotFoundException e1) {
+			e1.printStackTrace();
+		}
+
 		try {
 			line = br.readLine();
 		} catch (IOException e) {
