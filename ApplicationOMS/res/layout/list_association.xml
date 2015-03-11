@@ -48,6 +48,16 @@
             android:textColor="@color/Orange3" />
     </LinearLayout>
 
+    <TextView 
+        android:id="@+id/filtre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/Bleu1"
+        android:onClick="onDeleteFiltre"/>
+    
     <ListView
         android:id="@+id/listeAssociation"
         android:layout_width="fill_parent"
