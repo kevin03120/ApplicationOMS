@@ -111,7 +111,6 @@ public class Manager {
 					}
 				}
 			}
-			Log.i("testLine", line);
 			try {
 				line=br.readLine();
 			} catch (IOException e) {
@@ -252,6 +251,15 @@ public class Manager {
 		for(Equipement e:listeEquipement){
 			if(e.getNom().equals(nom)){
 				return e;
+			}
+		}
+		return null;
+	}
+
+	public Quartier recupereQuartierAPartirDuNom(String nom) {
+		for(Quartier q:listeQuartier){
+			if(q.getNom().equals(nom)){
+				return q;
 			}
 		}
 		return null;

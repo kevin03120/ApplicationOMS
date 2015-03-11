@@ -31,23 +31,21 @@ public class CSVParser {
 
 
 	public void readCSV(){
-		//		try {
-		//			br=new BufferedReader(new FileReader(new File(filePath)));
-		//		} catch (FileNotFoundException e) {
-		//			e.printStackTrace();
-		//		}	
-		
-		
+
+		Manager.getInstance().getListeAssociation().clear();;
+		Manager.getInstance().getListeEquipement().clear();;
+		Manager.getInstance().getListeQuartier().clear();;
+
 		try {
 			line=br.readLine();
 			line=br.readLine();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}	
-		
-		
+
+
 		while(!line.equals("")){
-			
+
 			String ligneCourante="";
 			ligneCourante+=line;
 
@@ -73,32 +71,32 @@ public class CSVParser {
 						if(line==null){
 							break;
 						}
-						
+
 						uid=line.replace("\"", "").split(";")[0];
 						matcher=pattern.matcher(uid);
 					}
-					
-					
+
+
 
 					String[]mots=ligneCourante.replace("\"", "").split(";");	
-					System.out.println("je récupère l'association n°"+mots[0]);
-					
+
 					recupererAssociation(mots);
 				}
 
 			}catch(IOException e){
 				e.printStackTrace();
 			}
-			
+
 			if(line==null){
 				System.out.println("Fin du parsing des données");
 				System.out.println("Nombre d'associations récupérées : "+Manager.getInstance().getListeAssociation().size());
 				break;
 			}
-			
+
 		}
 		Collections.sort(Manager.getInstance().getListeAssociation());
 		Collections.sort(Manager.getInstance().getListeEquipement());
+		Collections.sort(Manager.getInstance().getListeQuartier());
 	}
 
 
@@ -169,15 +167,42 @@ public class CSVParser {
 		if(equip2==null){
 			equip2=readEquipement(mots[7]);
 		}			
-		
+		Quartier q=recupereQuartier(mots[5]);
 		if(equip1!=null){
+			
+			if(q!=null){
+				equip1.setQuartier(q);
+				if(!Manager.getInstance().getListeQuartier().get(q.getUid()).getMesEquipements().contains(equip1)){
+					Manager.getInstance().getListeQuartier().get(q.getUid()).getMesEquipements().add(equip1);
+				}
+
+			}
 			listeEquipements.add(equip1);			
 		}
 		if(equip2!=null){
 			listeEquipements.add(equip2);
 		}	
-		
+
 		return listeEquipements;
+	}
+
+
+	private Quartier recupereQuartier(String mots) {
+		if(!mots.equals("")){
+			Quartier tmp=Manager.getInstance().recupereQuartierAPartirDuNom(mots);
+			if(tmp!=null){
+				return tmp;
+			}else{
+				int id=Manager.getInstance().getListeQuartier().size();
+				System.out.println("ID "+id);
+				String nom=mots;
+				List<Equipement> listEquipements=new ArrayList<Equipement>();
+				tmp=new Quartier(id, nom, listEquipements);
+				Manager.getInstance().getListeQuartier().add(tmp);
+				return tmp;
+			}
+		}	
+		return null;
 	}
 
 
