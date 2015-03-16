@@ -92,6 +92,7 @@ public class AssociationActivity extends Activity {
 		}
 		
 	}
+	
 	public void onGoSite(View v){
 		String nomAssoc = association.getNom();
 		nomAssoc = nomAssoc.replace("Œ", "OE");
