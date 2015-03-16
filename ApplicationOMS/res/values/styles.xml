@@ -40,6 +40,42 @@
        <item name="android:background">@drawable/custom_btn_paprika</item>
        <item name="android:padding">10dip</item>
    </style>
+   <style name="btnStyleRed" parent="@android:style/Widget.Button">
+       <item name="android:textSize">15sp</item>
+       <item name="android:textStyle">bold</item>
+       <item name="android:textColor">#FFFFFF</item>
+       <item name="android:gravity">center</item>
+       <item name="android:shadowColor">#000000</item>
+       <item name="android:shadowDx">1</item>
+       <item name="android:shadowDy">1</item>
+       <item name="android:shadowRadius">0.6</item>
+       <item name="android:background">@drawable/custom_btn_red</item>
+       <item name="android:padding">10dip</item>
+   </style>
+    <style name="btnStyleYellow" parent="@android:style/Widget.Button">
+       <item name="android:textSize">15sp</item>
+       <item name="android:textStyle">bold</item>
+       <item name="android:textColor">#FFFFFF</item>
+       <item name="android:gravity">center</item>
+       <item name="android:shadowColor">#000000</item>
+       <item name="android:shadowDx">1</item>
+       <item name="android:shadowDy">1</item>
+       <item name="android:shadowRadius">0.6</item>
+       <item name="android:background">@drawable/custom_btn_yellow</item>
+       <item name="android:padding">10dip</item>
+   </style>
+    <style name="btnStyleGreen" parent="@android:style/Widget.Button">
+       <item name="android:textSize">15sp</item>
+       <item name="android:textStyle">bold</item>
+       <item name="android:textColor">#FFFFFF</item>
+       <item name="android:gravity">center</item>
+       <item name="android:shadowColor">#000000</item>
+       <item name="android:shadowDx">1</item>
+       <item name="android:shadowDy">1</item>
+       <item name="android:shadowRadius">0.6</item>
+       <item name="android:background">@drawable/custom_btn_green</item>
+       <item name="android:padding">10dip</item>
+   </style>
    <color name="Vert1">#1FCF6D</color>
    <color name="Vert2">#1AAF5D</color>
    <color name="Vert3">#00BE9C</color>

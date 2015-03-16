@@ -15,95 +15,40 @@
 	   	    android:layout_marginTop="25dp"
 	   	    android:layout_marginBottom="25dp"/>
 	   	
-	   	<LinearLayout
-			android:orientation="horizontal"
-	   	    android:layout_width="match_parent"
-	   	    android:layout_height="wrap_content">
-
-		   	<Button
-		   	    android:id="@+id/btnAccueilAssociations"
-		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="100dp"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:layout_weight="1"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onAssociationActivity"
-		   	    android:text="@string/association" />
-
-		   	<Space
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_weight="0.10" />
-
-		   	<Button
-		   	    android:id="@+id/btnAccueilEquipements"
-		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="100dp"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:layout_weight="1"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onEquipementActivity"
-		   	    android:text="@string/equipement" />
-
-		   	</LinearLayout>
-		   	
-		   	<LinearLayout
-			android:orientation="horizontal"
+	   	<FrameLayout 
 	   	    android:layout_width="match_parent"
 	   	    android:layout_height="wrap_content"
-	   	    android:layout_marginTop="5dp">
-		   	<Button 
-		   	    android:id="@+id/btnAccueilDisciplines"
-		   	    android:layout_height="100dp"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:text="@string/discipline"
-				style="@style/btnStyleOrange"
-		   	    android:layout_weight="0.82"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onDisciplineActivity"/>
-		   	
-		   	<Space
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_weight="0.07" />
-		   	
-		   	<Button 
-		   	    android:id="@+id/btnAccueilQuartiers"
-		   	    android:layout_height="100dp"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_weight="1"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:onClick="onQuartierActivity"
-				style="@style/btnStyleOrange"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:text="@string/quartier"/>
-		   	</LinearLayout>
-
+	   	    android:layout_gravity="center_horizontal|center_vertical">
+	   	    
+	   	<Button
+	   		android:id="@+id/maPosition"
+	   		android:layout_width="200dp"
+	   		android:layout_height="wrap_content"
+	   		android:layout_gravity="center_horizontal"
+	   		android:onClick="onLaunchMaPosition"
+			style="@style/btnStyleRed"
+			android:layout_marginBottom="20dp"
+	   		android:text="@string/ma_position" />
 	   	
-	   	<LinearLayout
-	   	    android:layout_width="wrap_content"
-	   	    android:layout_height="wrap_content"
-	   	    android:layout_gravity="center_horizontal"
-	   	    android:layout_marginTop="25dp" >
-
-	   		<ImageView
-	   		    android:id="@+id/btnAccueilInfo"
-	   		    android:layout_width="50dp"
-	   		    android:layout_height="50dp"
-	   		    android:background="@drawable/icone_info"
-	   		    android:contentDescription="@string/info_icone"
-	   		    android:onClick="onInfoActivity" />
-
-	   		<Button
-	   		    android:id="@+id/connexion"
-	   		    android:layout_width="wrap_content"
-	   		    android:layout_height="wrap_content"
-	   		    android:onClick="onConnexionTest"
-				style="@style/btnStylePaprika"
-	   		    android:text="@string/Sync" />
-
-	   	</LinearLayout>
+	   	<Button
+	   		android:id="@+id/actualite"
+	   		android:layout_width="200dp"
+	   		android:layout_height="wrap_content"
+	   		android:layout_gravity="center_horizontal"
+	   		android:onClick="onLaunchActu"
+			android:layout_marginBottom="20dp"
+			style="@style/btnStyleYellow"
+	   		android:text="@string/actualite" />
+	   	
+	   	<Button
+	   		android:id="@+id/annuaire"
+	   		android:layout_width="200dp"
+	   		android:layout_height="wrap_content"
+	   		android:layout_gravity="center_horizontal"
+	   		android:onClick="onLaunchAnnuaire"
+			android:layout_marginBottom="20dp"
+			style="@style/btnStyleGreen"
+	   		android:text="@string/annuaire" />
+	   	</FrameLayout>
+	   	
 </LinearLayout>

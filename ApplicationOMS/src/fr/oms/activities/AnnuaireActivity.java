@@ -21,12 +21,9 @@ public class AnnuaireActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		CSVParser parser=new CSVParser(this);
 		parser.readCSV();
-		//Manager.getInstance().getTousLesSport(this);
-		//parser.readCSV("./src/fr/oms/ressources/export.csv");
-		//parser.readCSV(this.getFilesDir().getAbsolutePath()+"/testDonnees.txt");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-		setContentView(R.layout.accueil);
+		setContentView(R.layout.annuaire);
 	}
 	
 	public void onInfoActivity(View v){
@@ -81,11 +78,6 @@ public class AnnuaireActivity extends Activity {
 		Intent intent = new Intent(this, ListQuartierActivity.class);
 		startActivity(intent);
 		overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
-	}
-	
-	@Override
-	public void onBackPressed() {
-		moveTaskToBack(true);
 	}
 	
 	public boolean isNetworkAvailable( Activity mActivity ) 
