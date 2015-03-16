@@ -15,6 +15,7 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class ListAssociationActivity extends Activity {
@@ -27,6 +28,7 @@ public class ListAssociationActivity extends Activity {
 	private boolean isFiltreSport = false;
 	private List<Association> mesAssocFiltreSport;
 	private int idSport = 0;
+	private TextView txtFiltre;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,7 @@ public class ListAssociationActivity extends Activity {
 			idSport = getIntent().getExtras().getInt("idSport");
 			filtre = 3;
 		}
+		txtFiltre = (TextView)findViewById(R.id.filtre);
 		chkAdherent = (CheckBox)findViewById(R.id.chkAdherents);
 		chkNonAdherent = (CheckBox)findViewById(R.id.chkNonAdherents);
 		listeAssociation = (ListView)findViewById(R.id.listeAssociation);
@@ -48,6 +51,8 @@ public class ListAssociationActivity extends Activity {
 			for(Association a : Manager.getInstance().getListeAssociation()){
 				for(Sport s : a.getListeSport()){
 					if(s.getId() == idSport){
+						txtFiltre.setText("Filtre " + s.getNom() + " (Cliquez ici pour le supprimer)");
+						txtFiltre.setVisibility(0);
 						mesAssocFiltreSport.add(a);
 					}
 				}
@@ -108,21 +113,27 @@ public class ListAssociationActivity extends Activity {
 		});
 	}
 	
+	public void onDeleteFiltre(View v){
+		isFiltreSport = false;
+		afficheListe();
+		txtFiltre.setVisibility(4);
+	}
+	
 	public void onClickChkAdherent(View v){
 		if(!chkNonAdherent.isChecked()){
 			chkAdherent.setChecked(true);
 		}
-		AfficheListe();
+		afficheListe();
 	}
 	
 	public void onClickChkNonAdherent(View v){
 		if(!chkAdherent.isChecked()){
 			chkNonAdherent.setChecked(true);
 		}
-		AfficheListe();
+		afficheListe();
 	}
 	
-	private void AfficheListe(){
+	private void afficheListe(){
 		if(!isFiltreSport){
 			if(chkNonAdherent.isChecked()){
 				if(chkAdherent.isChecked()){

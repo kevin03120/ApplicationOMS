@@ -25,7 +25,7 @@ import org.apache.http.message.BasicNameValuePair;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import fr.oms.activities.AccueilActivity;
+import fr.oms.activities.AnnuaireActivity;
 
 public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 
@@ -33,9 +33,9 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 	private HttpResponse response=null;
 	private String monCookie;
 	private ProgressDialog progressDialog;
-	private AccueilActivity list;
+	private AnnuaireActivity list;
 	
-	public ClientHttp(AccueilActivity acti){
+	public ClientHttp(AnnuaireActivity acti){
 		client = new DefaultHttpClient();
 		
 		this.list=acti;
