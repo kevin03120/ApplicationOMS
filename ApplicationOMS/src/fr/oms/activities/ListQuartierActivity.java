@@ -2,8 +2,6 @@ package fr.oms.activities;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import fr.oms.DataLoader.GestionDonnees;
 import fr.oms.adapter.QuartierAdapter;
 import fr.oms.metier.Equipement;
 import fr.oms.metier.Quartier;
@@ -24,7 +22,6 @@ public class ListQuartierActivity extends Activity {
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_quartier);

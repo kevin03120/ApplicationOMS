@@ -51,7 +51,7 @@ public class MainActivity extends Activity {
 						timer.cancel();
 						timer.purge();
 
-						Intent intent = new Intent(MainActivity.this, AccueilActivity.class);
+						Intent intent = new Intent(MainActivity.this, AnnuaireActivity.class);
 						startActivity(intent);
 						overridePendingTransition(R.anim.right_to_left, R.anim.left_to_outleft); 
 					}

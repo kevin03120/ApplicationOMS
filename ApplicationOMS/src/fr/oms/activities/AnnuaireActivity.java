@@ -14,7 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 
-public class AccueilActivity extends Activity {
+public class AnnuaireActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class AccueilActivity extends Activity {
 	public void onConnexionTest(View v){
 		if(isNetworkAvailable(this)){
 			try {
-				new ClientHttp(AccueilActivity.this).execute(openFileOutput("testDonnees.txt",MODE_PRIVATE));
+				new ClientHttp(AnnuaireActivity.this).execute(openFileOutput("testDonnees.txt",MODE_PRIVATE));
 			}
 			catch (Exception e) 
 			{
@@ -63,7 +63,7 @@ public class AccueilActivity extends Activity {
 			} 
 		}
 		else{
-				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AccueilActivity.this);
+				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(AnnuaireActivity.this);
 				alertDialogBuilder.setTitle(R.string.detailCo);
 				alertDialogBuilder
 					.setMessage(getResources().getString(R.string.detailCo))

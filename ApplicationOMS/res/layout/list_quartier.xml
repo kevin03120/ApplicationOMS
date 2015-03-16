@@ -3,19 +3,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-	android:background="@color/Blanc" >
-    
-    <TextView 
-        android:id="@+id/titreQuartierList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/Orange1"
-        android:text="@string/quartier"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
-
+	android:background="@color/Orange1" >
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content">
+		<ImageView
+		    android:layout_width="35dp"
+		    android:layout_height="25dp"
+		    android:contentDescription="@string/info_icone"
+		    android:background="@drawable/oms_logo"/>
+		<TextView 
+		    android:id="@+id/titreQuartierList"
+			android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
+		    android:layout_marginTop="10dp"
+		    android:textColor="@color/Blanc"
+		    android:text="@string/quartier"
+		    android:textSize="30sp"
+		    android:textStyle="bold"/>
+	</FrameLayout>
     <ListView 
         android:id="@+id/listeQuartier"
         android:layout_width="fill_parent"
