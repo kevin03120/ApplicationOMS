@@ -15,7 +15,7 @@
 	   	    android:layout_marginTop="25dp"
 	   	    android:layout_marginBottom="25dp"/>
 	   	
-	   	<FrameLayout 
+	   	<RelativeLayout 
 	   	    android:layout_width="match_parent"
 	   	    android:layout_height="wrap_content"
 	   	    android:layout_gravity="center_horizontal|center_vertical">
@@ -24,8 +24,8 @@
 	   		android:id="@+id/maPosition"
 	   		android:layout_width="200dp"
 	   		android:layout_height="wrap_content"
-	   		android:layout_gravity="center_horizontal"
 	   		android:onClick="onLaunchMaPosition"
+	   		android:layout_centerHorizontal="true"
 			style="@style/btnStyleRed"
 			android:layout_marginBottom="20dp"
 	   		android:text="@string/ma_position" />
@@ -35,7 +35,9 @@
 	   		android:layout_width="200dp"
 	   		android:layout_height="wrap_content"
 	   		android:layout_gravity="center_horizontal"
+			android:layout_below="@id/maPosition"
 	   		android:onClick="onLaunchActu"
+	   		android:layout_centerHorizontal="true"
 			android:layout_marginBottom="20dp"
 			style="@style/btnStyleYellow"
 	   		android:text="@string/actualite" />
@@ -46,9 +48,11 @@
 	   		android:layout_height="wrap_content"
 	   		android:layout_gravity="center_horizontal"
 	   		android:onClick="onLaunchAnnuaire"
+	   		android:layout_centerHorizontal="true"
 			android:layout_marginBottom="20dp"
+			android:layout_below="@id/actualite"
 			style="@style/btnStyleGreen"
 	   		android:text="@string/annuaire" />
-	   	</FrameLayout>
+	   	</RelativeLayout>
 	   	
 </LinearLayout>
