@@ -89,13 +89,6 @@
 	   	    android:layout_gravity="center_horizontal"
 	   	    android:layout_marginTop="25dp" >
 
-	   		<ImageView
-	   		    android:id="@+id/btnAccueilInfo"
-	   		    android:layout_width="50dp"
-	   		    android:layout_height="50dp"
-	   		    android:background="@drawable/icone_info"
-	   		    android:contentDescription="@string/info_icone"
-	   		    android:onClick="onInfoActivity" />
 
 	   		<Button
 	   		    android:id="@+id/connexion"

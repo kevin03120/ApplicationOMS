@@ -18,6 +18,11 @@ public class AccueilActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	public void onInfoActivity(View v){
+		Intent intent = new Intent(this, InfoActivity.class);
+		startActivity(intent); 
+	}
+	
 	public void onLaunchActu(View v){
 	}
 	
