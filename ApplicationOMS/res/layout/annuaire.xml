@@ -15,49 +15,43 @@
 	   	    android:layout_marginTop="25dp"
 	   	    android:layout_marginBottom="25dp"/>
 	   	
-	   	<LinearLayout
-			android:orientation="horizontal"
-	   	    android:layout_width="match_parent"
-	   	    android:layout_height="wrap_content">
+	   	 <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:gravity="center_horizontal"
+	        android:orientation="vertical"
+	        android:layout_marginLeft="20dp" 
+	        android:layout_marginRight="20dp">
 
 		   	<Button
 		   	    android:id="@+id/btnAccueilAssociations"
 		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="100dp"
+		   	    android:layout_width="match_parent"
+		   	    android:layout_height="wrap_content"
+            	android:layout_marginBottom="5dp"
 		   	    android:layout_gravity="center_horizontal"
 		   	    android:layout_weight="1"
 		   	    android:background="@drawable/custom_btn_sorbus"
 		   	    android:onClick="onAssociationActivity"
 		   	    android:text="@string/association" />
 
-		   	<Space
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_weight="0.10" />
-
 		   	<Button
 		   	    android:id="@+id/btnAccueilEquipements"
 		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="100dp"
+		   	    android:layout_width="match_parent"
+		   	    android:layout_height="wrap_content"
 		   	    android:layout_gravity="center_horizontal"
+            	android:layout_marginBottom="5dp"
 		   	    android:layout_weight="1"
 		   	    android:background="@drawable/custom_btn_sorbus"
 		   	    android:onClick="onEquipementActivity"
 		   	    android:text="@string/equipement" />
-
-		   	</LinearLayout>
 		   	
-		   	<LinearLayout
-			android:orientation="horizontal"
-	   	    android:layout_width="match_parent"
-	   	    android:layout_height="wrap_content"
-	   	    android:layout_marginTop="5dp">
 		   	<Button 
 		   	    android:id="@+id/btnAccueilDisciplines"
-		   	    android:layout_height="100dp"
-		   	    android:layout_width="wrap_content"
+		   	    android:layout_height="wrap_content"
+          	    android:layout_marginBottom="5dp"
+		   	    android:layout_width="match_parent"
 		   	    android:layout_gravity="center_horizontal"
 		   	    android:text="@string/discipline"
 				style="@style/btnStyleOrange"
@@ -65,43 +59,25 @@
 		   	    android:background="@drawable/custom_btn_sorbus"
 		   	    android:onClick="onDisciplineActivity"/>
 		   	
-		   	<Space
-		   	    android:layout_width="wrap_content"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_weight="0.07" />
-		   	
 		   	<Button 
 		   	    android:id="@+id/btnAccueilQuartiers"
-		   	    android:layout_height="100dp"
-		   	    android:layout_width="wrap_content"
+		   	    android:layout_height="wrap_content"
+		   	    android:layout_width="match_parent"
 		   	    android:layout_weight="1"
+            	android:layout_marginBottom="5dp"
 		   	    android:layout_gravity="center_horizontal"
 		   	    android:onClick="onQuartierActivity"
 				style="@style/btnStyleOrange"
 		   	    android:background="@drawable/custom_btn_sorbus"
 		   	    android:text="@string/quartier"/>
-		   	</LinearLayout>
-
-	   	
-	   	<LinearLayout
-	   	    android:layout_width="wrap_content"
-	   	    android:layout_height="wrap_content"
-	   	    android:layout_gravity="center_horizontal"
-	   	    android:layout_marginTop="25dp" >
-
-	   		<ImageView
-	   		    android:id="@+id/btnAccueilInfo"
-	   		    android:layout_width="50dp"
-	   		    android:layout_height="50dp"
-	   		    android:background="@drawable/icone_info"
-	   		    android:contentDescription="@string/info_icone"
-	   		    android:onClick="onInfoActivity" />
 
 	   		<Button
 	   		    android:id="@+id/connexion"
-	   		    android:layout_width="wrap_content"
+	   		    android:layout_width="match_parent"
 	   		    android:layout_height="wrap_content"
 	   		    android:onClick="onConnexionTest"
+		   	    android:layout_weight="1"
+            	android:layout_marginBottom="5dp"
 				style="@style/btnStylePaprika"
 	   		    android:text="@string/Sync" />
 

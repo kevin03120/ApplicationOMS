@@ -22,6 +22,16 @@ public class AccueilActivity extends Activity {
 		startActivity(intent);
 	}
 	
+	@Override
+	public void onBackPressed() {
+		moveTaskToBack(true);
+	}
+	
+	public void onInfoActivity(View v){
+		Intent intent = new Intent(this, InfoActivity.class);
+		startActivity(intent); 
+	}
+	
 	public void onLaunchActu(View v){
 	}
 	
