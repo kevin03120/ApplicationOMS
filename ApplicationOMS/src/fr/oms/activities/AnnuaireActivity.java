@@ -2,6 +2,7 @@ package fr.oms.activities;
 
 import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
+import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -19,6 +20,7 @@ public class AnnuaireActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Manager.getInstance().clearDonnees();
 		CSVParser parser=new CSVParser(this);
 		parser.readCSV();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);

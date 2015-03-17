@@ -8,9 +8,9 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.bluetooth.BluetoothAdapter.LeScanCallback;
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;
-import android.util.Log;
 import fr.oms.activities.R;
 import fr.oms.metier.Association;
 import fr.oms.metier.Discipline;
@@ -123,6 +123,14 @@ public class Manager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void clearDonnees(){
+		listeAssociation.clear();
+		listeDiscipline.clear();
+		listeEquipement.clear();
+		listeQuartier.clear();
+		listeSport.clear();
 	}
 	
 	public void getTousLesSport(Context context) {
