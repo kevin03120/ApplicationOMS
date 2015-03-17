@@ -23,7 +23,7 @@ public class AnnuaireActivity extends Activity {
 		Manager.getInstance().clearDonnees();
 		CSVParser parser=new CSVParser(this);
 		parser.readCSV();
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setTitle(getResources().getString(R.string.annuaire));
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.annuaire);
 	}

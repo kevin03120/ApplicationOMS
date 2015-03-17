@@ -36,7 +36,8 @@
         <activity android:name="ListQuartierActivity"></activity>
         <activity android:name="TestConnexionActivity" ></activity>
         <activity android:name="AssociationActivity"></activity>
-        <activity android:name="AnnuaireActivity"></activity>
+        <activity android:name="AnnuaireActivity"
+        	android:theme="@style/Theme.Vert_oms"></activity>
     </application>
 
 </manifest>

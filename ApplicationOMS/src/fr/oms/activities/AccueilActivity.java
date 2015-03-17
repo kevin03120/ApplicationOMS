@@ -1,5 +1,7 @@
 package fr.oms.activities;
 
+import android.app.ActionBar;
+import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
