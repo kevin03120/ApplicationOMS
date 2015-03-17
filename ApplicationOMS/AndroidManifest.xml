@@ -28,7 +28,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="AccueilActivity"></activity>
+        <activity android:name="AccueilActivity"
+            android:theme="@style/Theme.Bleu_oms"></activity>
         <activity android:name="InfoActivity"></activity>
         <activity android:name="ListAssociationActivity"></activity>
         <activity android:name="ListEquipementActivity"></activity>
