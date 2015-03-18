@@ -4,7 +4,6 @@ import fr.oms.adapter.EquipementAdapter;
 import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.Window;
 import android.widget.ListView;
 
 public class ListEquipementActivity extends Activity {
@@ -14,10 +13,8 @@ public class ListEquipementActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_equipement);
-		//Manager.getInstance().setAccesDonnees(new GestionDonnees());
-		//Manager.getInstance().lireDonnees();
+		setTitle(getResources().getString(R.string.equipement));
 		
 		EquipementAdapter equipementAdapter = new EquipementAdapter(this, 0, Manager.getInstance().getListeEquipement());
 		

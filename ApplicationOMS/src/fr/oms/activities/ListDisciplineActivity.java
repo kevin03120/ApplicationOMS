@@ -8,7 +8,6 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -24,9 +23,8 @@ public class ListDisciplineActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.list_discipline);
-		
+		setTitle(getResources().getString(R.string.discipline));
 		DisciplineAdapter disciplineAdapter = new DisciplineAdapter(this, 0, Manager.getInstance().getListeDiscipline());
 		listeDiscipline = (ListView) findViewById(R.id.listeDiscipline);
 		listeDiscipline.setAdapter(disciplineAdapter);

@@ -2,10 +2,13 @@ package fr.oms.activities;
 
 import fr.oms.fragments.FragmentActus;
 import fr.oms.fragments.FragmentEvents;
-import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class AgendaActivity extends FragmentActivity  {
 	
@@ -27,5 +30,24 @@ public class AgendaActivity extends FragmentActivity  {
                 FragmentEvents.class, null);
     }
 	
+    @Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    // Inflate the menu items for use in the action bar
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.agenda_actions, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle presses on the action bar items
+	    switch (item.getItemId()) {
+	        case R.id.action_Agenda:
+	        	Toast.makeText(this, getResources().getString(R.string.agenda), Toast.LENGTH_SHORT).show();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
 	  
 }

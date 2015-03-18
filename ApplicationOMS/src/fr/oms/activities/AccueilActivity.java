@@ -16,7 +16,6 @@ public class AccueilActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.accueil);
-		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 	
 	@Override
@@ -55,8 +54,8 @@ public class AccueilActivity extends Activity {
 	}
 	
 	public void onLaunchActu(View v){
-		//Intent intent = new Intent(AccueilActivity.this, AgendaActivity.class);
-		//startActivity(intent);
+		Intent intent = new Intent(AccueilActivity.this, AgendaActivity.class);
+		startActivity(intent);
 	}
 	
 	public void onLaunchMaPosition(View v){

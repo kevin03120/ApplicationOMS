@@ -3,15 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-	android:background="@color/Blanc" >
+	android:background="@color/VertClair" >
     <FrameLayout 
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content">
-		<ImageView
-		    android:layout_width="35dp"
-		    android:layout_height="25dp"
-		    android:contentDescription="@string/info_icone"
-		    android:background="@drawable/oms_logo"/>
 	    <TextView 
 	        android:id="@+id/titreEquipementList"
 	        android:layout_width="wrap_content"

@@ -32,13 +32,17 @@
         <activity android:name="AccueilActivity"
             android:theme="@style/Theme.Bleu_oms"></activity>
         <activity android:name="InfoActivity"></activity>
-        <activity android:name="ListAssociationActivity"></activity>
+        <activity android:name="ListAssociationActivity"
+            android:theme="@style/Theme.Vert_oms"></activity>
         <activity android:name="AgendaActivity"
              android:theme="@style/Theme.Jaune_oms">
         </activity>
-        <activity android:name="ListEquipementActivity"></activity>
-        <activity android:name="ListDisciplineActivity"></activity>
-        <activity android:name="ListQuartierActivity"></activity>
+        <activity android:name="ListEquipementActivity"
+            android:theme="@style/Theme.Vert_oms"></activity>
+        <activity android:name="ListDisciplineActivity"
+            android:theme="@style/Theme.Vert_oms"></activity>
+        <activity android:name="ListQuartierActivity"
+            android:theme="@style/Theme.Vert_oms"></activity>
         <activity android:name="TestConnexionActivity" ></activity>
         <activity android:name="AssociationActivity"></activity>
         <activity android:name="AnnuaireActivity"
