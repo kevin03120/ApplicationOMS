@@ -33,6 +33,9 @@
             android:theme="@style/Theme.Bleu_oms"></activity>
         <activity android:name="InfoActivity"></activity>
         <activity android:name="ListAssociationActivity"></activity>
+        <activity android:name="AgendaActivity"
+             android:theme="@style/Theme.Jaune_oms">
+        </activity>
         <activity android:name="ListEquipementActivity"></activity>
         <activity android:name="ListDisciplineActivity"></activity>
         <activity android:name="ListQuartierActivity"></activity>

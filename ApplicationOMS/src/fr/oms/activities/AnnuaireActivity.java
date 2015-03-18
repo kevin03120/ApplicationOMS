@@ -1,8 +1,5 @@
 package fr.oms.activities;
 
-import fr.oms.DataLoader.CSVParser;
-import fr.oms.DataLoader.ClientHttp;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,9 +12,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import fr.oms.DataLoader.CSVParser;
+import fr.oms.DataLoader.ClientHttp;
+import fr.oms.modele.Manager;
 
-public class AnnuaireActivity extends Activity {
+public class AnnuaireActivity extends FragmentActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -126,5 +127,4 @@ public class AnnuaireActivity extends Activity {
 		          return false;
 	          }
 	 }   
-	
 }
