@@ -32,6 +32,8 @@ public class AccueilActivity extends Activity {
 	}
 	
 	public void onLaunchActu(View v){
+		Intent intent = new Intent(AccueilActivity.this, AgendaActivity.class);
+		startActivity(intent);
 	}
 	
 	public void onLaunchMaPosition(View v){

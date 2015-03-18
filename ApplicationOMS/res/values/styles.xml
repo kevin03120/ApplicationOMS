@@ -88,6 +88,8 @@
     <color name="Vert4">#01A185</color>
     <color name="Bleu1">#2C97DF</color>
     <color name="Bleu2">#227FBC</color>
+    <color name="BleuClair">#A9E2F3</color>
+    <color name="VertClair">#D8F6CE</color>
     <color name="Violet1">#9C56B8</color>
     <color name="Violet2">#8F3FB0</color>
     <color name="BleuFonce1">#334960</color>
