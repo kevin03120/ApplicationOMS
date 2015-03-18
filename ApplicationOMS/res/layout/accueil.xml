@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center_horizontal|center_vertical"
-    android:background="@color/Blanc"
+    android:background="@color/BleuFonce2"
     android:orientation="vertical" >
 
     <ImageView
@@ -57,14 +57,6 @@
             android:layout_weight="1"
             android:onClick="onLaunchMaPosition"
             android:text="@string/ma_position" />
-
-        <ImageView
-            android:id="@+id/btnAccueilInfo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/icone_info"
-            android:contentDescription="@string/info_icone"
-            android:onClick="onInfoActivity" />
     </LinearLayout>
 
 </LinearLayout>

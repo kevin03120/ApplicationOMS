@@ -7,8 +7,6 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
-
-import android.bluetooth.BluetoothAdapter.LeScanCallback;
 import android.content.Context;
 import android.content.res.Resources.NotFoundException;
 import fr.oms.activities.R;

@@ -76,7 +76,6 @@ public class AssociationActivity extends Activity {
 			nomContact.setText(getResources().getString(R.string.contactNonDispo));
 		}
 		horaire.setText(association.getHorraire());
-		//equipement1.setText(getResources().getString(R.string.equipementNonDispo));
 		if(association.getListeEquipement()!=null){
 			if(association.getListeEquipement().size() >=2){	
 				equipement1.setText(association.getListeEquipement().get(0).getNom());
@@ -122,14 +121,14 @@ public class AssociationActivity extends Activity {
 		numeros = new ArrayList<String>();
 		Log.i("testAppel", "Tel Fix : " + pers.getTelFixe() );
 		Log.i("testAppel", "Tel Port : " + pers.getTelPortable());
-		if((association.getContact().getTelFixe() != "")&&(association.getContact().getTelPortable() != "")){
+		if((association.getContact().getTelFixe() != null)&&(association.getContact().getTelPortable() != null)){
 			numeros.add(pers.getTelFixe());
 			numeros.add(pers.getTelPortable());
 		}
-		else if((association.getContact().getTelFixe() == "")&&(association.getContact().getTelPortable() != "")){
+		else if((association.getContact().getTelFixe() == null)&&(association.getContact().getTelPortable() != null)){
 			numeros.add(pers.getTelPortable());
 		}
-		else if(((association.getContact().getTelFixe() != "")&&(association.getContact().getTelPortable() == ""))){
+		else if(((association.getContact().getTelFixe() != null)&&(association.getContact().getTelPortable() == null))){
 			numeros.add(pers.getTelFixe());
 		}
 		ArrayAdapter<String> lesNumeros = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, numeros);

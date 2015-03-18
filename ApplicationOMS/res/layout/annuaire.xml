@@ -71,15 +71,5 @@
 		   	    android:background="@drawable/custom_btn_sorbus"
 		   	    android:text="@string/quartier"/>
 
-	   		<Button
-	   		    android:id="@+id/connexion"
-	   		    android:layout_width="match_parent"
-	   		    android:layout_height="wrap_content"
-	   		    android:onClick="onConnexionTest"
-		   	    android:layout_weight="1"
-            	android:layout_marginBottom="5dp"
-				style="@style/btnStylePaprika"
-	   		    android:text="@string/Sync" />
-
 	   	</LinearLayout>
 </LinearLayout>
