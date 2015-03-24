@@ -1,75 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:layout_gravity="center_horizontal|center_vertical"
-	android:orientation="vertical"
-	android:background="@color/Blanc" >
-	   	<ImageView
-	   	    android:id="@+id/imagePageAccueil"
-	   	    android:layout_width="wrap_content"
-	   	    android:layout_height="wrap_content"
-	   	    android:layout_gravity="center_horizontal|top"
-	   	    android:background="@drawable/oms_logo"
-	   	    android:contentDescription="@string/info_image"
-	   	    android:layout_marginTop="25dp"
-	   	    android:layout_marginBottom="25dp"/>
-	   	
-	   	 <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
-	        android:gravity="center_horizontal"
-	        android:orientation="vertical"
-	        android:layout_marginLeft="20dp" 
-	        android:layout_marginRight="20dp">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    android:background="@color/Blanc"
+    android:orientation="vertical" >
 
-		   	<Button
-		   	    android:id="@+id/btnAccueilAssociations"
-		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="match_parent"
-		   	    android:layout_height="wrap_content"
-            	android:layout_marginBottom="5dp"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:layout_weight="1"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onAssociationActivity"
-		   	    android:text="@string/association" />
+    <Button
+        android:id="@+id/btnAccueilAssociations"
+        style="@style/btnStyleOrange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/custom_btn_sorbus"
+        android:onClick="onAssociationActivity"
+        android:text="@string/association" />
 
-		   	<Button
-		   	    android:id="@+id/btnAccueilEquipements"
-		   	    style="@style/btnStyleOrange"
-		   	    android:layout_width="match_parent"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_gravity="center_horizontal"
-            	android:layout_marginBottom="5dp"
-		   	    android:layout_weight="1"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onEquipementActivity"
-		   	    android:text="@string/equipement" />
-		   	
-		   	<Button 
-		   	    android:id="@+id/btnAccueilDisciplines"
-		   	    android:layout_height="wrap_content"
-          	    android:layout_marginBottom="5dp"
-		   	    android:layout_width="match_parent"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:text="@string/discipline"
-				style="@style/btnStyleOrange"
-		   	    android:layout_weight="0.82"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:onClick="onDisciplineActivity"/>
-		   	
-		   	<Button 
-		   	    android:id="@+id/btnAccueilQuartiers"
-		   	    android:layout_height="wrap_content"
-		   	    android:layout_width="match_parent"
-		   	    android:layout_weight="1"
-            	android:layout_marginBottom="5dp"
-		   	    android:layout_gravity="center_horizontal"
-		   	    android:onClick="onQuartierActivity"
-				style="@style/btnStyleOrange"
-		   	    android:background="@drawable/custom_btn_sorbus"
-		   	    android:text="@string/quartier"/>
+    <Button
+        android:id="@+id/btnAccueilEquipements"
+        style="@style/btnStyleOrange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/custom_btn_sorbus"
+        android:onClick="onEquipementActivity"
+        android:text="@string/equipement" />
 
-	   	</LinearLayout>
+    <Button
+        android:id="@+id/btnAccueilDisciplines"
+        style="@style/btnStyleOrange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.82"
+        android:background="@drawable/custom_btn_sorbus"
+        android:onClick="onDisciplineActivity"
+        android:text="@string/discipline" />
+
+    <Button
+        android:id="@+id/btnAccueilQuartiers"
+        style="@style/btnStyleOrange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/custom_btn_sorbus"
+        android:onClick="onQuartierActivity"
+        android:text="@string/quartier" />
+
 </LinearLayout>

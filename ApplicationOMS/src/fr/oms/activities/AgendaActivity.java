@@ -5,6 +5,7 @@ import fr.oms.fragments.FragmentEvents;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,16 +18,17 @@ public class AgendaActivity extends FragmentActivity  {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setTitle(R.string.agenda);
         setContentView(R.layout.activity_main_xml);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
 
         mTabHost.addTab(
-                mTabHost.newTabSpec("tab1").setIndicator("Tab 1", null),
+                mTabHost.newTabSpec("Actualités").setIndicator("Actualités", null),
                 FragmentActus.class, null);
         mTabHost.addTab(
-                mTabHost.newTabSpec("tab2").setIndicator("Tab 2", null),
+                mTabHost.newTabSpec("Evènements").setIndicator("Evènements", null),
                 FragmentEvents.class, null);
     }
 	
@@ -45,6 +47,9 @@ public class AgendaActivity extends FragmentActivity  {
 	        case R.id.action_Agenda:
 	        	Toast.makeText(this, getResources().getString(R.string.agenda), Toast.LENGTH_SHORT).show();
 	            return true;
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;	 
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
