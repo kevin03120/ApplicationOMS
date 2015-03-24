@@ -9,10 +9,11 @@ import android.content.pm.ActivityInfo;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
@@ -48,6 +49,9 @@ public class AnnuaireActivity extends FragmentActivity {
 	        case R.id.action_Sync:
 	        	onConnexionTest();
 	            return true;
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;	        
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
@@ -112,7 +116,6 @@ public class AnnuaireActivity extends FragmentActivity {
 	          } 
 	          else 
 	          {  
-	        
 		        NetworkInfo[] info = connectivity.getAllNetworkInfo();   
 		        if (info != null) 
 		        {   

@@ -38,14 +38,14 @@
 
         <Button
             android:id="@+id/actualite"
-            android:textSize="20sp"
             style="@style/btnStyleYellow"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             android:layout_weight="1"
             android:onClick="onLaunchActu"
-            android:text="@string/actualite" />
+            android:text="@string/agenda"
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/maPosition"
