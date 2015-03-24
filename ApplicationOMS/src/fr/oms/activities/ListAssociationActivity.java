@@ -10,6 +10,8 @@ import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
@@ -34,6 +36,7 @@ public class ListAssociationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_association);
 		setTitle(getResources().getString(R.string.association));
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		filtre = 0;
 		if(getIntent().getExtras()!=null){
 			isFiltreSport = true;
@@ -239,5 +242,17 @@ public class ListAssociationActivity extends Activity {
 				break;
 		}
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
 	
 }

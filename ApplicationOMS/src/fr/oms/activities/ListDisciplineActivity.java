@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,6 +26,7 @@ public class ListDisciplineActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_discipline);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setTitle(getResources().getString(R.string.discipline));
 		DisciplineAdapter disciplineAdapter = new DisciplineAdapter(this, 0, Manager.getInstance().getListeDiscipline());
 		listeDiscipline = (ListView) findViewById(R.id.listeDiscipline);
@@ -69,4 +72,16 @@ public class ListDisciplineActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
 }

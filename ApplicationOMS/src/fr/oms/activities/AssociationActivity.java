@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -39,6 +40,7 @@ public class AssociationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.association);
 		Bundle extras = getIntent().getExtras();
@@ -150,10 +152,15 @@ public class AssociationActivity extends Activity {
 	        case R.id.lien_site:
 	        	onGoSite();
 	            return true;
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
 	}
+	
+	
 	
 	private void touchNumero(){
 		listeNumero.setOnItemClickListener(new ListView.OnItemClickListener(){

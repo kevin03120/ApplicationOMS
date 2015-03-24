@@ -39,29 +39,44 @@
         <activity
             android:name="ListAssociationActivity"
             android:theme="@style/Theme.Vert_oms" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.oms.activities.AnnuaireActivity" />
         </activity>
         <activity
             android:name="AgendaActivity"
             android:theme="@style/Theme.Jaune_oms" >
-             <meta-data
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="fr.oms.activities.AccueilActivity" />
         </activity>
         <activity
             android:name="ListEquipementActivity"
             android:theme="@style/Theme.Vert_oms" >
+             <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.oms.activities.AnnuaireActivity" />
         </activity>
         <activity
             android:name="ListDisciplineActivity"
             android:theme="@style/Theme.Vert_oms" >
+              <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.oms.activities.AnnuaireActivity" />
         </activity>
         <activity
             android:name="ListQuartierActivity"
             android:theme="@style/Theme.Vert_oms" >
+               <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.oms.activities.AnnuaireActivity" />
         </activity>
         <activity
             android:name="AssociationActivity"
             android:theme="@style/Theme.Vert_oms" >
+                <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="fr.oms.activities.ListAssociationActivity" />               
         </activity>
         <activity
             android:name="AnnuaireActivity"

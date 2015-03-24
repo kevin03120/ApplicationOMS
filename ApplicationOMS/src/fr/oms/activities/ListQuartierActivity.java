@@ -10,6 +10,8 @@ import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,7 +27,7 @@ public class ListQuartierActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.list_quartier);
 		setTitle(getResources().getString(R.string.quartier));
-		
+		getActionBar().setDisplayHomeAsUpEnabled(true);		
 		listeQuartier = (ListView)findViewById(R.id.listeQuartier);
 		QuartierAdapter quartierAdapter = new QuartierAdapter(this, 0, Manager.getInstance().getListeQuartier());
 		listeQuartier.setAdapter(quartierAdapter);
@@ -68,4 +70,16 @@ public class ListQuartierActivity extends Activity {
 			}
 		});
 	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case android.R.id.home:
+	            NavUtils.navigateUpFromSameTask(this);
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
+	}
+	
 }
