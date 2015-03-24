@@ -146,8 +146,8 @@ public class AssociationActivity extends Activity {
 				/*String numero = numeros.get(position);
 				numero = numero.replace(" ", "");
 				numero = numero.replace(".", "");
-				Log.i("testAppel", "Tel Fix cool : " + numero );
-				Log.i("testAppel", "Tel Port cool : " + numero);
+				Log.i("testAppel", "Tel Fix : " + numero );
+				Log.i("testAppel", "Tel Port : " + numero);
 				Intent intent = new Intent( Intent.ACTION_CALL);
 				intent.setData(Uri.parse("tel:" + numero));
 				startActivity( intent );*/

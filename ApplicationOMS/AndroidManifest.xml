@@ -31,7 +31,8 @@
 
         <activity android:name="AccueilActivity"
             android:theme="@style/Theme.Bleu_oms"></activity>
-        <activity android:name="InfoActivity"></activity>
+        <activity android:name="InfoActivity"
+        	android:theme="@style/Theme.Bleu_oms"></activity>
         <activity android:name="ListAssociationActivity"
             android:theme="@style/Theme.Vert_oms"></activity>
         <activity android:name="AgendaActivity"
@@ -43,8 +44,8 @@
             android:theme="@style/Theme.Vert_oms"></activity>
         <activity android:name="ListQuartierActivity"
             android:theme="@style/Theme.Vert_oms"></activity>
-        <activity android:name="TestConnexionActivity" ></activity>
-        <activity android:name="AssociationActivity"></activity>
+        <activity android:name="AssociationActivity"
+        	android:theme="@style/Theme.Vert_oms"></activity>
         <activity android:name="AnnuaireActivity"
         	android:theme="@style/Theme.Vert_oms"></activity>
     </application>
