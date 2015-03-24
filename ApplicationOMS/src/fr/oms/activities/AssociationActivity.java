@@ -121,14 +121,14 @@ public class AssociationActivity extends Activity {
 		numeros = new ArrayList<String>();
 		Log.i("testAppel", "Tel Fix : " + pers.getTelFixe() );
 		Log.i("testAppel", "Tel Port : " + pers.getTelPortable());
-		if((association.getContact().getTelFixe() != null)&&(association.getContact().getTelPortable() != null)){
+		if((association.getContact().getTelFixe().length() != 0)&&(association.getContact().getTelPortable().length() != 0)){
 			numeros.add(pers.getTelFixe());
 			numeros.add(pers.getTelPortable());
 		}
-		else if((association.getContact().getTelFixe() == null)&&(association.getContact().getTelPortable() != null)){
+		else if((association.getContact().getTelFixe().length() == 0)&&(association.getContact().getTelPortable().length() != 0)){
 			numeros.add(pers.getTelPortable());
 		}
-		else if(((association.getContact().getTelFixe() != null)&&(association.getContact().getTelPortable() == null))){
+		else if(((association.getContact().getTelFixe().length() != 0)&&(association.getContact().getTelPortable().length() == 0))){
 			numeros.add(pers.getTelFixe());
 		}
 		ArrayAdapter<String> lesNumeros = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, numeros);
