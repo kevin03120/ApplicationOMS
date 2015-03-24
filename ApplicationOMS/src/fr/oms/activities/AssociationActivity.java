@@ -13,8 +13,10 @@ import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -22,7 +24,6 @@ import android.widget.TextView;
 
 public class AssociationActivity extends Activity {
 
-	private TextView nomAssoc;
 	private TextView nomContact;
 	private TextView telFixContact;
 	private TextView telPortContact;
@@ -38,7 +39,6 @@ public class AssociationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.association);
 		Bundle extras = getIntent().getExtras();
@@ -50,10 +50,10 @@ public class AssociationActivity extends Activity {
 		}
 		recupererToutesViews();
 		placeDonneeDansView();
+		setTitle(association.getNom());
 	}
 	
 	private void recupererToutesViews(){
-		nomAssoc = (TextView)findViewById(R.id.titreAssociation);
 		nomContact = (TextView)findViewById(R.id.nomContact);
 		telFixContact = (TextView)findViewById(R.id.telFixContact);
 		telPortContact = (TextView)findViewById(R.id.telPortContact);
@@ -65,7 +65,6 @@ public class AssociationActivity extends Activity {
 	
 	private void placeDonneeDansView(){
 		pers = association.getContact();
-		nomAssoc.setText(association.getNom());
 		if(pers != null){
 			nomContact.setText(pers.getTitre() + " " + pers.getNom() + " " + pers.getPrenom());
 			telFixContact.setText("Tel Fix : " + pers.getTelFixe());
@@ -92,7 +91,7 @@ public class AssociationActivity extends Activity {
 		
 	}
 	
-	public void onGoSite(View v){
+	public void onGoSite(){
 		String nomAssoc = association.getNom();
 		nomAssoc = nomAssoc.replace("Œ", "OE");
 		nomAssoc = nomAssoc.replace("AS ", "");
@@ -136,6 +135,24 @@ public class AssociationActivity extends Activity {
 		listeNumero.setAdapter(lesNumeros);
 		touchNumero();
 		dialog.show();
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+	    MenuInflater inflater = getMenuInflater();
+	    inflater.inflate(R.menu.association_actions, menu);
+	    return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    switch (item.getItemId()) {
+	        case R.id.lien_site:
+	        	onGoSite();
+	            return true;
+	        default:
+	            return super.onOptionsItemSelected(item);
+	    }
 	}
 	
 	private void touchNumero(){
