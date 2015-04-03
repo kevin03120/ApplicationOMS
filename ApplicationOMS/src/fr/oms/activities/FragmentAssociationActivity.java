@@ -1,7 +1,9 @@
-package fr.oms.fragments;
+package fr.oms.activities;
 
 import java.util.List;
+
 import fr.oms.activities.R;
+import fr.oms.fragments.FragmentAssociation;
 import fr.oms.metier.Association;
 import fr.oms.modele.Manager;
 import android.content.Intent;

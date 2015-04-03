@@ -126,8 +126,11 @@
     <color name="RougeNum2">#B43104</color>
     <color name="JauneClair">#DEFE5E</color>
     <color name="BleuOms">#009EE0</color>
+    <color name="BleuOmsFonce">#0089C4</color>
     <color name="VertOms">#C4D600</color>
+    <color name="VertOmsFonce">#A4B300</color>
     <color name="NoirOms">#54585A</color>
     <color name="OrangeOms">#F29400</color>
+    <color name="OrangeOmsFonce">#D58200</color>
 
 </resources>

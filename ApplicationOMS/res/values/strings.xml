@@ -32,4 +32,5 @@
 	<string name="contactNonDispo">Aucun contact disponible</string>
 	<string name="equipementNonDispo">Aucun equipement disponible</string>
 	<string name="agenda">Agenda</string>
+	<string name="titreDetailAssociation">Détail d\'une association</string>
 </resources>

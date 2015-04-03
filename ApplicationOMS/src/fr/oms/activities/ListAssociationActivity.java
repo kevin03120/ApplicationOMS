@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.oms.adapter.AssociationAdapter;
-import fr.oms.fragments.FragmentAssociationActivity;
 import fr.oms.metier.Association;
 import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
