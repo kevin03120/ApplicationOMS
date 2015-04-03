@@ -30,46 +30,47 @@
         </activity>
         <activity
             android:name="AccueilActivity"
-            android:theme="@style/Theme.Bleu_oms" >
+            android:theme="@style/Theme.Noir_oms">
         </activity>
         <activity
-            android:name="InfoActivity"
-            android:theme="@style/Theme.Bleu_oms" >
+            android:name="InfoActivity" >
         </activity>
         <activity
-            android:name="ListAssociationActivity"
-            android:theme="@style/Theme.Vert_oms" >
+            android:name="ListAssociationActivity" 
+            android:theme="@style/Theme.Vert_oms">
         </activity>
         <activity
-            android:name="AgendaActivity"
-            android:theme="@style/Theme.Jaune_oms" >
+            android:name="AgendaActivity" 
+            android:theme="@style/Theme.Orange_oms" >
              <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="fr.oms.activities.AccueilActivity" />
         </activity>
         <activity
-            android:name="ListEquipementActivity"
+            android:name="ListEquipementActivity" 
             android:theme="@style/Theme.Vert_oms" >
         </activity>
         <activity
-            android:name="ListDisciplineActivity"
+            android:name="ListDisciplineActivity" 
             android:theme="@style/Theme.Vert_oms" >
         </activity>
         <activity
-            android:name="ListQuartierActivity"
+            android:name="ListQuartierActivity" 
             android:theme="@style/Theme.Vert_oms" >
         </activity>
         <activity
-            android:name="AssociationActivity"
+            android:name="AssociationActivity" 
             android:theme="@style/Theme.Vert_oms" >
         </activity>
         <activity
-            android:name="AnnuaireActivity"
-            android:theme="@style/Theme.Vert_oms" >
+            android:name="AnnuaireActivity" 
+            android:theme="@style/Theme.Vert_oms">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="fr.oms.activities.AccueilActivity" />
         </activity>
+        <activity android:name="fr.oms.fragments.FragmentAssociationActivity" 
+            android:theme="@style/Theme.Vert_oms" ></activity>
     </application>
 
 </manifest>

@@ -12,49 +12,45 @@
 
     <Button
         android:id="@+id/btnAccueilAssociations"
-        style="@style/btnStyleOrange"
+        style="@style/btnStyleGreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
-        android:background="@drawable/custom_btn_sorbus"
         android:onClick="onAssociationActivity"
         android:text="@string/association" />
 
     <Button
         android:id="@+id/btnAccueilEquipements"
-        style="@style/btnStyleOrange"
+        style="@style/btnStyleGreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
-        android:background="@drawable/custom_btn_sorbus"
         android:onClick="onEquipementActivity"
         android:text="@string/equipement" />
 
     <Button
         android:id="@+id/btnAccueilDisciplines"
-        style="@style/btnStyleOrange"
+        style="@style/btnStyleGreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="5dp"
         android:layout_weight="0.82"
-        android:background="@drawable/custom_btn_sorbus"
         android:onClick="onDisciplineActivity"
         android:text="@string/discipline" />
 
     <Button
         android:id="@+id/btnAccueilQuartiers"
-        style="@style/btnStyleOrange"
+        style="@style/btnStyleGreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="5dp"
         android:layout_weight="1"
-        android:background="@drawable/custom_btn_sorbus"
         android:onClick="onQuartierActivity"
         android:text="@string/quartier" />
 

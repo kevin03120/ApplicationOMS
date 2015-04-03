@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.oms.adapter.AssociationAdapter;
+import fr.oms.fragments.FragmentAssociationActivity;
 import fr.oms.metier.Association;
 import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
@@ -101,7 +102,7 @@ public class ListAssociationActivity extends Activity {
 				case 5 : assoc = mesAssociationsAdherentesFiltresSport.get(position); break;
 				}
 				if(assoc.isAdherent()){
-					Intent intent = new Intent(ListAssociationActivity.this, AssociationActivity.class);
+					Intent intent = new Intent(ListAssociationActivity.this, FragmentAssociationActivity.class);
 					intent.putExtra("position", assoc.getUid());
 					startActivity(intent);
 				}

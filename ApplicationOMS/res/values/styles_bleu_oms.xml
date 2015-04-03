@@ -34,9 +34,9 @@
     </style>
 
     <style name="ActionBar.Solid.Bleu_oms" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
-        <item name="android:background">@drawable/ab_background_textured_bleu_oms</item>
+        <item name="android:background">@drawable/ab_solid_bleu_oms</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_solid_bleu_oms</item>
-        <item name="android:backgroundSplit">@drawable/ab_background_textured_bleu_oms</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_bleu_oms</item>
         <item name="android:progressBarStyle">@style/ProgressBar.Bleu_oms</item>
     </style>
 

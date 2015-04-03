@@ -33,6 +33,8 @@ public class AccueilActivity extends Activity {
 	        	onPlanOMS();
 	            return true;
 	        case R.id.guide_sport:
+	        	onGuideSport();
+	        	return true;
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }

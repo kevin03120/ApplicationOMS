@@ -144,7 +144,6 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 		try {
 			Thread.sleep(2000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -158,7 +157,6 @@ public class ClientHttp extends AsyncTask<FileOutputStream, Void, Void> {
 		try {
 			instream = list.openFileInput("testDonnees.txt");
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		if (instream != null)

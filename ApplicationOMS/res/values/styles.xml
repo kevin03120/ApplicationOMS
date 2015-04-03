@@ -55,6 +55,20 @@
         <item name="android:background">@drawable/custom_btn_red</item>
         <item name="android:padding">10dip</item>
     </style>
+    
+    <style name="btnStyleBlue" parent="@android:style/Widget.Button">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">0.6</item>
+        <item name="android:background">@drawable/custom_btn_blue</item>
+        <item name="android:padding">10dip</item>
+    </style>
+    
 
     <style name="btnStyleYellow" parent="@android:style/Widget.Button">
         <item name="android:textSize">15sp</item>
@@ -111,5 +125,9 @@
     <color name="RougeNum1">#DF3A01</color>
     <color name="RougeNum2">#B43104</color>
     <color name="JauneClair">#DEFE5E</color>
+    <color name="BleuOms">#009EE0</color>
+    <color name="VertOms">#C4D600</color>
+    <color name="NoirOms">#54585A</color>
+    <color name="OrangeOms">#F29400</color>
 
 </resources>

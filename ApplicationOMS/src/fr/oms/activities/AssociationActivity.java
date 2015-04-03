@@ -1,24 +1,21 @@
 package fr.oms.activities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.oms.metier.Association;
 import fr.oms.metier.Personne;
 import fr.oms.modele.Manager;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,12 +32,14 @@ public class AssociationActivity extends Activity {
 	private Personne pers;
 	private List<String> numeros;
 	private ListView listeNumero;
+	private ViewPager viewPager;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 		setContentView(R.layout.association);
+		
 		Bundle extras = getIntent().getExtras();
 		int position = extras.getInt("position");
 		for(Association a : Manager.getInstance().getListeAssociation()){
@@ -88,7 +87,6 @@ public class AssociationActivity extends Activity {
 			equipement1.setText("Aucun equipement connu");
 			equipement2.setVisibility(4);
 		}
-		
 	}
 	
 	public void onGoSite(){
@@ -114,7 +112,7 @@ public class AssociationActivity extends Activity {
 	}
 	
 	public void onCall(View v){
-		Dialog dialog = new Dialog(this);
+		/*Dialog dialog = new Dialog(this);
 		dialog.setContentView(R.layout.dialog);
 		dialog.setTitle("Appeler " + pers.getNom() + " " + pers.getPrenom());
 		numeros = new ArrayList<String>();
@@ -134,7 +132,7 @@ public class AssociationActivity extends Activity {
 		listeNumero = (ListView)dialog.findViewById(R.id.listeDialog);
 		listeNumero.setAdapter(lesNumeros);
 		touchNumero();
-		dialog.show();
+		dialog.show();*/
 	}
 	
 	@Override
@@ -153,23 +151,5 @@ public class AssociationActivity extends Activity {
 	        default:
 	            return super.onOptionsItemSelected(item);
 	    }
-	}
-	
-	private void touchNumero(){
-		listeNumero.setOnItemClickListener(new ListView.OnItemClickListener(){
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				/*String numero = numeros.get(position);
-				numero = numero.replace(" ", "");
-				numero = numero.replace(".", "");
-				Log.i("testAppel", "Tel Fix : " + numero );
-				Log.i("testAppel", "Tel Port : " + numero);
-				Intent intent = new Intent( Intent.ACTION_CALL);
-				intent.setData(Uri.parse("tel:" + numero));
-				startActivity( intent );*/
-			}
-		
-		});
 	}
 }
