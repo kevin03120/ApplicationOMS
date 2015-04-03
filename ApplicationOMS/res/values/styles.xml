@@ -111,5 +111,9 @@
     <color name="RougeNum1">#DF3A01</color>
     <color name="RougeNum2">#B43104</color>
     <color name="JauneClair">#DEFE5E</color>
+    <color name="BleuOms">#009EE0</color>
+    <color name="VertOms">#C4D600</color>
+    <color name="NoirOms">#54585A</color>
+    <color name="OrangeOms">#F29400</color>
 
 </resources>

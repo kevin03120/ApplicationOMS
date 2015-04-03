@@ -19,7 +19,7 @@ public class AgendaActivity extends FragmentActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle(R.string.agenda);
-        setContentView(R.layout.activity_main_xml);
+        setContentView(R.layout.agenda);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         mTabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
         mTabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);

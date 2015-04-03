@@ -10,6 +10,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,6 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import fr.oms.DataLoader.CSVParser;
 import fr.oms.DataLoader.ClientHttp;
+import fr.oms.fragments.FragmentListeAssociations;
+import fr.oms.fragments.FragmentListeDisciplines;
+import fr.oms.fragments.FragmentListeEquipements;
+import fr.oms.fragments.FragmentListeQuartiers;
 import fr.oms.modele.Manager;
 
 public class AnnuaireActivity extends FragmentActivity {
@@ -32,13 +37,25 @@ public class AnnuaireActivity extends FragmentActivity {
 		setContentView(R.layout.annuaire);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		getActionBar().setDisplayShowCustomEnabled(true);
+		
+		FragmentTabHost tabHost = (FragmentTabHost) findViewById(android.R.id.tabhost);
+		tabHost.setup(this, getSupportFragmentManager(), android.R.id.tabcontent);
+		tabHost.addTab(
+				tabHost.newTabSpec("Associations").setIndicator("Associations", null),
+                FragmentListeAssociations.class, null);
+		tabHost.addTab(
+				tabHost.newTabSpec("Equipements").setIndicator("Equipements", null),
+                FragmentListeEquipements.class, null);
+		tabHost.addTab(
+				tabHost.newTabSpec("Disciplines").setIndicator("Disciplines", null),
+                FragmentListeDisciplines.class, null);
+		tabHost.addTab(
+				tabHost.newTabSpec("Quartiers").setIndicator("Quartiers", null),
+                FragmentListeQuartiers.class, null);
 	}
 	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-	    // Inflate the menu items for use in the action bar
-	    MenuInflater inflater = getMenuInflater();
-	    inflater.inflate(R.menu.annuaire_actions, menu);
 	    return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -46,9 +63,6 @@ public class AnnuaireActivity extends FragmentActivity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle presses on the action bar items
 	    switch (item.getItemId()) {
-	        case R.id.action_Sync:
-	        	onConnexionTest();
-	            return true;
 	        case android.R.id.home:
 	            NavUtils.navigateUpFromSameTask(this);
 	            return true;	        
