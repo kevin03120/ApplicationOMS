@@ -145,7 +145,7 @@ public class FragmentListeAssociations extends Fragment {
 				case 5 : assoc = mesAssociationsAdherentesFiltresSport.get(position); break;
 				}
 				if(assoc.isAdherent()){
-					Intent intent = new Intent(FragmentListeAssociations.this.getActivity(), AssociationActivity.class);
+					Intent intent = new Intent(FragmentListeAssociations.this.getActivity(), FragmentAssociationActivity.class);
 					intent.putExtra("position", assoc.getUid());
 					startActivity(intent);
 				}
