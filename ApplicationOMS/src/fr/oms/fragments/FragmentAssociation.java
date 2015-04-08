@@ -1,22 +1,21 @@
 package fr.oms.fragments;
 
 
-import fr.oms.activities.R;
-import fr.oms.metier.Association;
-import fr.oms.metier.Personne;
-import fr.oms.modele.Manager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import fr.oms.activities.R;
+import fr.oms.metier.Association;
+import fr.oms.metier.Personne;
+import fr.oms.modele.Manager;
 
 public class FragmentAssociation extends Fragment {
 

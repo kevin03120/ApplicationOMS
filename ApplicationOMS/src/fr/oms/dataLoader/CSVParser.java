@@ -1,4 +1,4 @@
-package fr.oms.DataLoader;
+package fr.oms.dataLoader;
 
 import java.io.BufferedReader;
 import java.io.IOException;
