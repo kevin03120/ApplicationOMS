@@ -29,7 +29,7 @@ public class ListDisciplineActivity extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setTitle(getResources().getString(R.string.discipline));
 		DisciplineAdapter disciplineAdapter = new DisciplineAdapter(this, 0, Manager.getInstance().getListeDiscipline());
-		listeDiscipline = (ListView) findViewById(R.id.listeDiscipline);
+		//listeDiscipline = (ListView) findViewById(R.id.listeDiscipline);
 		listeDiscipline.setAdapter(disciplineAdapter);
 		donneSport();
 	}

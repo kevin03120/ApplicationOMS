@@ -4,20 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/Blanc">
-    <FrameLayout 
-	    android:layout_width="match_parent"
-	    android:layout_height="wrap_content">
-	    <TextView 
-	        android:id="@+id/titreEquipementList"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="center_horizontal"
-	        android:layout_marginTop="10dp"
-	        android:text="@string/equipement"
-	        android:textColor="@color/Orange1"
-	        android:textSize="30sp"
-	        android:textStyle="bold" />
-	</FrameLayout>
+  
     
     <ListView 
         android:id="@+id/listeEquipement"

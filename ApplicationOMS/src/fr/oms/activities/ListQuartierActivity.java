@@ -3,10 +3,6 @@ package fr.oms.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.oms.adapter.QuartierAdapter;
-import fr.oms.metier.Equipement;
-import fr.oms.metier.Quartier;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.app.Dialog;
 import android.os.Bundle;
@@ -17,6 +13,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import fr.oms.adapter.QuartierAdapter;
+import fr.oms.metier.Equipement;
+import fr.oms.metier.Quartier;
+import fr.oms.modele.Manager;
 
 public class ListQuartierActivity extends Activity {
 	

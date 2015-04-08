@@ -10,13 +10,22 @@
        android:orientation="vertical"
        android:layout_gravity="center_horizontal|center_vertical">
        
+        <TextView 
+                android:id="@+id/nomAssociation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/association"
+                android:textSize="18sp"
+                android:textColor="@color/VertOmsFonce"/>
+        
        <ImageView 
             android:id="@+id/iconeAdherentAssociationFiche"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:contentDescription="@string/info_image"
         	android:layout_gravity="center_horizontal|center_vertical"
-            android:background="@drawable/logoadherent"/>
+            android:background="@drawable/logo_ad"/>
        
     <LinearLayout 
         android:layout_width="match_parent"
@@ -45,25 +54,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
             <TextView 
                 android:id="@+id/telFixContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
             <TextView 
                 android:id="@+id/telPortContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
             <TextView 
                 android:id="@+id/mailContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
             
         </LinearLayout>
     </LinearLayout>
@@ -88,7 +97,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18sp"
-            android:textColor="@color/Blanc"/>
+            android:textColor="@color/NoirOms"/>
     </LinearLayout>
     
     <LinearLayout 
@@ -117,14 +126,14 @@
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
 	        
 	        <TextView 
 	            android:id="@+id/lieu_equipement2"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
                 android:textSize="18sp"
-                android:textColor="@color/Blanc"/>
+                android:textColor="@color/NoirOms"/>
         </LinearLayout>
     </LinearLayout>
     <Button 

@@ -84,7 +84,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="fr.oms.activities.AccueilActivity" />
         </activity>
-        <activity android:name="fr.oms.fragments.FragmentAssociationActivity" 
+        <activity android:name="fr.oms.activities.FragmentAssociationActivity" 
             android:theme="@style/Theme.Vert_oms" ></activity>
     </application>
 

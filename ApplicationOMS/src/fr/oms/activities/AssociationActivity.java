@@ -1,24 +1,21 @@
 package fr.oms.activities;
 
-import java.util.List;
 
-import fr.oms.metier.Association;
-import fr.oms.metier.Personne;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.TextView;
+import fr.oms.metier.Association;
+import fr.oms.metier.Personne;
+import fr.oms.modele.Manager;
 
 public class AssociationActivity extends Activity {
 
@@ -31,9 +28,6 @@ public class AssociationActivity extends Activity {
 	private TextView equipement2;
 	private Association association;
 	private Personne pers;
-	private List<String> numeros;
-	private ListView listeNumero;
-	private ViewPager viewPager;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -1,24 +1,22 @@
 package fr.oms.fragments;
 
-import java.util.List;
 
-import fr.oms.activities.R;
-import fr.oms.metier.Association;
-import fr.oms.metier.Personne;
-import fr.oms.modele.Manager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
+import fr.oms.activities.R;
+import fr.oms.metier.Association;
+import fr.oms.metier.Personne;
+import fr.oms.modele.Manager;
 
 public class FragmentAssociation extends Fragment {
 
 	private Association association;
+	private TextView nomAssociation;
 	private TextView nomContact;
 	private ImageView iconeAdherent;
 	private TextView telFixContact;
@@ -28,9 +26,6 @@ public class FragmentAssociation extends Fragment {
 	private TextView equipement1;
 	private TextView equipement2;
 	private Personne pers;
-	private List<String> numeros;
-	private ListView listeNumero;
-	private ViewPager viewPager;
 	
 	public static FragmentAssociation newInstance(Association a) {
 		Bundle extras = new Bundle();
@@ -50,11 +45,12 @@ public class FragmentAssociation extends Fragment {
 			}
 			recupererToutesViews(v);
 			placeDonneeDansView();
-			getActivity().setTitle(association.getNom());
+			getActivity().setTitle(getResources().getString(R.string.titreDetailAssociation));
 	     return v;
 	}
 	
 	private void recupererToutesViews(View v){
+		nomAssociation = (TextView)v.findViewById(R.id.nomAssociation);
 		nomContact = (TextView)v.findViewById(R.id.nomContact);
 		telFixContact = (TextView)v.findViewById(R.id.telFixContact);
 		telPortContact = (TextView)v.findViewById(R.id.telPortContact);
@@ -66,6 +62,7 @@ public class FragmentAssociation extends Fragment {
 	}
 	
 	private void placeDonneeDansView(){
+		nomAssociation.setText(association.getNom());
 		pers = association.getContact();
 		if(pers != null){
 			nomContact.setText(pers.getTitre() + " " + pers.getNom() + " " + pers.getPrenom());

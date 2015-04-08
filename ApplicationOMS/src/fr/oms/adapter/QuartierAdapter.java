@@ -2,9 +2,6 @@ package fr.oms.adapter;
 
 import java.util.List;
 
-import fr.oms.activities.R;
-import fr.oms.metier.Quartier;
-import fr.oms.modele.Manager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +9,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import fr.oms.activities.R;
+import fr.oms.metier.Quartier;
+import fr.oms.modele.Manager;
 
 public class QuartierAdapter extends ArrayAdapter<Quartier> {
 

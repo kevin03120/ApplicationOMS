@@ -1,9 +1,7 @@
-package fr.oms.fragments;
+package fr.oms.activities;
 
 import java.util.List;
-import fr.oms.activities.R;
-import fr.oms.metier.Association;
-import fr.oms.modele.Manager;
+
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -16,6 +14,9 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import fr.oms.fragments.FragmentAssociation;
+import fr.oms.metier.Association;
+import fr.oms.modele.Manager;
 
 public class FragmentAssociationActivity extends FragmentActivity {
 

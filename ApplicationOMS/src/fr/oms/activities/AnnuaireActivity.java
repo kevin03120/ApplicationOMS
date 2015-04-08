@@ -13,7 +13,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.app.NavUtils;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import fr.oms.DataLoader.CSVParser;
@@ -52,6 +51,8 @@ public class AnnuaireActivity extends FragmentActivity {
 		tabHost.addTab(
 				tabHost.newTabSpec("Quartiers").setIndicator("Quartiers", null),
                 FragmentListeQuartiers.class, null);
+		
+		
 	}
 	
 	@Override
