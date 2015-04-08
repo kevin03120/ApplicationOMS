@@ -1,4 +1,4 @@
-package fr.oms.dataLoader;
+package fr.oms.dataloader;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
