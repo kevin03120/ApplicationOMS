@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name="AccueilActivity"
-            android:theme="@style/Theme.Noir_oms">
+            >
         </activity>
         <activity
             android:name="InfoActivity" >
