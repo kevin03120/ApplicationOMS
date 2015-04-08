@@ -1,4 +1,4 @@
-package fr.oms.DataLoader;
+package fr.oms.dataLoader;
 
 import java.util.ArrayList;
 import java.util.Iterator;
