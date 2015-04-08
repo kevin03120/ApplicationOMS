@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fiche_assoc"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 	android:background="@color/Blanc" >
-    
+   
    <LinearLayout 
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -28,6 +29,7 @@
             android:background="@drawable/logo_ad"/>
        
     <LinearLayout 
+        android:id="@+id/contact_fiche_assoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -77,6 +79,7 @@
         </LinearLayout>
     </LinearLayout>
     <LinearLayout 
+        android:id="@+id/horaire_fiche_assoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -101,6 +104,7 @@
     </LinearLayout>
     
     <LinearLayout 
+        android:id="@+id/equipement_fiche_assoc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -136,14 +140,64 @@
                 android:textColor="@color/NoirOms"/>
         </LinearLayout>
     </LinearLayout>
-    <Button 
-        android:id="@+id/btn_map"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+    <LinearLayout 
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/goMap"
-        android:textColor="@color/Blanc"
-        android:background="@drawable/custom_btn_sorbus"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal|center_vertical">
+      
+	    <Button 
+	        android:id="@+id/btn_map"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:gravity="center"
+	        android:text="@string/goMap"
+	        android:textColor="@color/Blanc"
+	        android:background="@drawable/custom_btn_sorbus"/>
+	    
+	    <Button 
+	        android:id="@+id/btn_info_site"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="5dp"
+	        android:layout_marginRight="5dp"
+	        android:layout_gravity="center"
+	        android:text="@string/goSite"
+	        android:onClick="onGoSite"
+	        android:textColor="@color/Blanc"
+	        android:background="@drawable/custom_btn_sorbus"/>
+	    
+	</LinearLayout>
    </LinearLayout>
+   <LinearLayout 
+       android:id="@+id/layout_assoc_pas_adherente"
+       android:orientation="vertical"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+	   android:background="#3F000000"
+	   android:visibility="invisible"/>
+	   <LinearLayout 
+       		android:id="@+id/layout_text_pas_adherente"
+	    	android:layout_width="match_parent"
+	   		android:layout_height="100dp"
+	   		android:layout_gravity="center_vertical"
+	   		android:background="@color/Gris2"
+	        android:visibility="invisible">
+	       <TextView
+	           android:id="@+id/info_assoc_non_adherente"
+	           android:layout_width="match_parent"
+	           android:layout_height="wrap_content"
+	           android:layout_gravity="center_vertical|center_horizontal"
+	           android:gravity="center_vertical|center_horizontal"
+	           android:text="@string/pasAdherent"
+	           android:textColor="@color/Blanc"
+	           android:visibility="invisible"/>
+	   </LinearLayout>
+
 </FrameLayout>
