@@ -141,6 +141,10 @@ public class FragmentListeAssociations extends Fragment {
 				}
 				Intent intent = new Intent(FragmentListeAssociations.this.getActivity(), FragmentAssociationActivity.class);
 				intent.putExtra("position", assoc.getUid());
+				intent.putExtra("adherents", chkAdherent.isChecked());
+				intent.putExtra("nonAdherents", chkNonAdherent.isChecked());
+				intent.putExtra("sport", isFiltreSport);
+				intent.putExtra("idSport", idSport);
 				startActivity(intent);
 			}
 		}); 
