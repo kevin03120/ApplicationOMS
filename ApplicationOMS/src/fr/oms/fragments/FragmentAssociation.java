@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -79,27 +80,32 @@ public class FragmentAssociation extends Fragment {
 		layoutEquipement = (LinearLayout)v.findViewById(R.id.equipement_fiche_assoc);
 		btnMap = (Button)v.findViewById(R.id.btn_map);
 		btnSite = (Button)v.findViewById(R.id.btn_info_site);
+		onGoSite();
 	}
 	
 	public void onGoSite(){
-		String nomAssoc = association.getNom();
-		nomAssoc = nomAssoc.replace("Œ", "OE");
-		nomAssoc = nomAssoc.replace("AS ", "");
-		nomAssoc = nomAssoc.replace(" A ", "-");
-		nomAssoc = nomAssoc.replace(" ", "-");
-		nomAssoc = nomAssoc.replace(".", "");
-		nomAssoc = nomAssoc.replace("(", "");
-		nomAssoc = nomAssoc.replace(")", "");
-		nomAssoc = nomAssoc.replace("&", "");
-		nomAssoc = nomAssoc.replace("/", "");
-		nomAssoc = nomAssoc.replace("\"", "");
-		nomAssoc = nomAssoc.replace("'", "");
-		nomAssoc = nomAssoc.replace("--", "-");
-		String url = getResources().getString(R.string.lienSite);
-		url = url + "club/" + nomAssoc;
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setData(Uri.parse(url));
-		startActivity(i);
+		btnSite.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+            	String nomAssoc = association.getNom();
+				nomAssoc = nomAssoc.replace("Œ", "OE");
+				nomAssoc = nomAssoc.replace("AS ", "");
+				nomAssoc = nomAssoc.replace(" A ", "-");
+				nomAssoc = nomAssoc.replace(" ", "-");
+				nomAssoc = nomAssoc.replace(".", "");
+				nomAssoc = nomAssoc.replace("(", "");
+				nomAssoc = nomAssoc.replace(")", "");
+				nomAssoc = nomAssoc.replace("&", "");
+				nomAssoc = nomAssoc.replace("/", "");
+				nomAssoc = nomAssoc.replace("\"", "");
+				nomAssoc = nomAssoc.replace("'", "");
+				nomAssoc = nomAssoc.replace("--", "-");
+				String url = getResources().getString(R.string.lienSite);
+				url = url + "club/" + nomAssoc;
+				Intent i = new Intent(Intent.ACTION_VIEW);
+				i.setData(Uri.parse(url));
+				startActivity(i);
+            }
+        });
 	}
 	
 	private void placeDonneeDansView(){

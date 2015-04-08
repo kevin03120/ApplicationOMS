@@ -17,6 +17,7 @@ import android.widget.ExpandableListView;
 import android.widget.ListView;
 import fr.oms.activities.ListAssociationActivity;
 import fr.oms.activities.R;
+import fr.oms.adapter.ExpandableListAdapter;
 import fr.oms.metier.Discipline;
 import fr.oms.metier.Sport;
 import fr.oms.modele.Manager;
@@ -49,13 +50,13 @@ public class FragmentListeDisciplines extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		//DisciplineAdapter disciplineAdapter = new DisciplineAdapter(getActivity(), 0, Manager.getInstance().getListeDiscipline());
-		//ExpandableListAdapter adapter=new ExpandableListAdapter(getActivity(), listeDesNomsDeDisciplines, mapNomDesSportParDisciplines);
+		ExpandableListAdapter adapter=new ExpandableListAdapter(getActivity(), listeDesNomsDeDisciplines, mapNomDesSportParDisciplines);
 		View v = inflater.inflate(R.layout.list_discipline, container,false);
-		/*listeDiscipline = (ExpandableListView) v.findViewById(R.id.lvExp);
+		listeDiscipline = (ExpandableListView) v.findViewById(R.id.lvExp);
 		//listeDiscipline = (ListView)v.findViewById(R.id.listeDiscipline);
 		//listeDiscipline.setAdapter(disciplineAdapter);
 		listeDiscipline.setAdapter(adapter);
-		donneSport();*/
+		donneSport();
 		return v;
 	}
 
