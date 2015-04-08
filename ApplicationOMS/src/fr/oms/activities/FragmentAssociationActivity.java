@@ -2,18 +2,13 @@ package fr.oms.activities;
 
 import java.util.List;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import fr.oms.fragments.FragmentAssociation;
 import fr.oms.metier.Association;
 import fr.oms.modele.Manager;
@@ -59,44 +54,4 @@ public class FragmentAssociationActivity extends FragmentActivity {
 	            return Manager.getInstance().getListeAssociation().size();
 	        }       
 	    }
-	 
-
-		public void onGoSite(){
-			String nomAssoc = association.getNom();
-			nomAssoc = nomAssoc.replace("Œ", "OE");
-			nomAssoc = nomAssoc.replace("AS ", "");
-			nomAssoc = nomAssoc.replace(" A ", "-");
-			nomAssoc = nomAssoc.replace(" ", "-");
-			nomAssoc = nomAssoc.replace(".", "");
-			nomAssoc = nomAssoc.replace("(", "");
-			nomAssoc = nomAssoc.replace(")", "");
-			nomAssoc = nomAssoc.replace("&", "");
-			nomAssoc = nomAssoc.replace("/", "");
-			nomAssoc = nomAssoc.replace("\"", "");
-			nomAssoc = nomAssoc.replace("'", "");
-			nomAssoc = nomAssoc.replace("--", "-");
-			String url = getResources().getString(R.string.lienSite);
-			url = url + "club/" + nomAssoc;
-			Intent i = new Intent(Intent.ACTION_VIEW);
-			i.setData(Uri.parse(url));
-			startActivity(i);
-		}
-		
-		@Override
-		public boolean onCreateOptionsMenu(Menu menu) {
-		    MenuInflater inflater = getMenuInflater();
-		    inflater.inflate(R.menu.association_actions, menu);
-		    return super.onCreateOptionsMenu(menu);
-		}
-		
-		@Override
-		public boolean onOptionsItemSelected(MenuItem item) {
-		    switch (item.getItemId()) {
-		        case R.id.lien_site:
-		        	onGoSite();
-		            return true;
-		        default:
-		            return super.onOptionsItemSelected(item);
-		    }
-		}
 }

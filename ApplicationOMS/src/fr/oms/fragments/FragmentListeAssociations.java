@@ -15,7 +15,6 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 import fr.oms.activities.FragmentAssociationActivity;
 import fr.oms.activities.R;
 import fr.oms.adapter.AssociationAdapter;
@@ -140,14 +139,9 @@ public class FragmentListeAssociations extends Fragment {
 				case 4 : assoc = mesAssociationsNonAdherentesFiltresSport.get(position); break;
 				case 5 : assoc = mesAssociationsAdherentesFiltresSport.get(position); break;
 				}
-				if(assoc.isAdherent()){
-					Intent intent = new Intent(FragmentListeAssociations.this.getActivity(), FragmentAssociationActivity.class);
-					intent.putExtra("position", assoc.getUid());
-					startActivity(intent);
-				}
-				else{
-					Toast.makeText(FragmentListeAssociations.this.getActivity(), FragmentListeAssociations.this.getResources().getString(R.string.pasAdherent), Toast.LENGTH_SHORT).show();
-				}
+				Intent intent = new Intent(FragmentListeAssociations.this.getActivity(), FragmentAssociationActivity.class);
+				intent.putExtra("position", assoc.getUid());
+				startActivity(intent);
 			}
 		}); 
 	}
