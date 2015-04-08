@@ -3,10 +3,6 @@ package fr.oms.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.oms.adapter.AssociationAdapter;
-import fr.oms.metier.Association;
-import fr.oms.metier.Sport;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +14,10 @@ import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import fr.oms.adapter.AssociationAdapter;
+import fr.oms.metier.Association;
+import fr.oms.metier.Sport;
+import fr.oms.modele.Manager;
 
 public class ListAssociationActivity extends Activity {
 

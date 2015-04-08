@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -43,6 +42,7 @@ public class FragmentListeAssociations extends Fragment {
 		chkAdherent = (CheckBox)v.findViewById(R.id.chkAdherents);
 		chkNonAdherent = (CheckBox)v.findViewById(R.id.chkNonAdherents);
 		listeAssociation = (ListView)v.findViewById(R.id.listeAssociation);
+		listeAssociation.setFastScrollEnabled(true);
 		filtre = 0;
 		if(getActivity().getIntent().getExtras()!=null){
 			isFiltreSport = true;
@@ -51,6 +51,14 @@ public class FragmentListeAssociations extends Fragment {
 		}
 		mesAssoc = rendNouvelleListe();
 		mesAssocFiltreSport = new ArrayList<Association>();
+		ajouterFiltre();
+		associerActionBouton();
+		return v;
+	}
+
+
+
+	private void ajouterFiltre() {
 		if(isFiltreSport){
 			for(Association a : Manager.getInstance().getListeAssociation()){
 				for(Sport s : a.getListeSport()){
@@ -71,8 +79,6 @@ public class FragmentListeAssociations extends Fragment {
 			listeAssociation.setAdapter(associationAdapter);
 			touchAssoc();
 		}
-		associerActionBouton();
-		return v;
 	}
 
 
@@ -102,18 +108,8 @@ public class FragmentListeAssociations extends Fragment {
 
 	}
 
-
-
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-
-
-	}
-
 	private void touchAssoc(){
 		listeAssociation.setOnItemClickListener(new ListView.OnItemClickListener(){
-
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				List<Association> mesAssociationsAdherentes = new ArrayList<Association>();
@@ -147,7 +143,7 @@ public class FragmentListeAssociations extends Fragment {
 				intent.putExtra("position", assoc.getUid());
 				startActivity(intent);
 			}
-		});
+		}); 
 	}
 
 	public void onDeleteFiltre(View v){
@@ -156,7 +152,7 @@ public class FragmentListeAssociations extends Fragment {
 		txtFiltre.setVisibility(4);
 	}
 
-	
+
 
 	private void afficheListe(){
 		if(!isFiltreSport){
@@ -263,14 +259,6 @@ public class FragmentListeAssociations extends Fragment {
 			}
 		}
 		break;
-		}
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-		default:
-			return super.onOptionsItemSelected(item);
 		}
 	}
 }

@@ -51,6 +51,8 @@ public class AnnuaireActivity extends FragmentActivity {
 		tabHost.addTab(
 				tabHost.newTabSpec("Quartiers").setIndicator("Quartiers", null),
                 FragmentListeQuartiers.class, null);
+		
+		
 	}
 	
 	@Override

@@ -2,8 +2,6 @@ package fr.oms.adapter;
 
 import java.util.List;
 
-import fr.oms.activities.R;
-import fr.oms.metier.Discipline;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import fr.oms.activities.R;
+import fr.oms.metier.Discipline;
 
 public class DisciplineAdapter extends ArrayAdapter<Discipline> {
 

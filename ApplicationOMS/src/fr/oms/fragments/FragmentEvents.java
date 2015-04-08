@@ -1,12 +1,12 @@
 package fr.oms.fragments;
 
-import fr.oms.activities.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import fr.oms.activities.R;
 
 public class FragmentEvents extends Fragment{
 

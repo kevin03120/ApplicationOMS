@@ -1,9 +1,6 @@
 package fr.oms.activities;
 
 
-import fr.oms.metier.Association;
-import fr.oms.metier.Personne;
-import fr.oms.modele.Manager;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -16,6 +13,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import fr.oms.metier.Association;
+import fr.oms.metier.Personne;
+import fr.oms.modele.Manager;
 
 public class AssociationActivity extends Activity {
 

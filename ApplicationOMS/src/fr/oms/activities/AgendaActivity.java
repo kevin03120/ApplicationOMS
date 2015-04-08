@@ -1,7 +1,5 @@
 package fr.oms.activities;
 
-import fr.oms.fragments.FragmentActus;
-import fr.oms.fragments.FragmentEvents;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTabHost;
@@ -10,6 +8,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
+import fr.oms.fragments.FragmentActus;
+import fr.oms.fragments.FragmentEvents;
 
 public class AgendaActivity extends FragmentActivity  {
 	

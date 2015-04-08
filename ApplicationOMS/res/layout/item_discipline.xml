@@ -11,7 +11,8 @@
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:layout_marginTop="20dp"
-            android:textColor="@color/Blanc"
+            android:textColor="@color/NoirOms"
+            android:textStyle="bold"
             android:layout_gravity="center_vertical|start"
             android:text="@string/association"
             android:layout_marginBottom="20dp"/>
